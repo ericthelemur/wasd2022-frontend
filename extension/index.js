@@ -84,11 +84,11 @@ module.exports = (nodecg) => {
     }
   }
 
-  const countdownRep = nodecg.Replicant('countdown', 'wasd2021');
+  const countdownRep = nodecg.Replicant('countdown', 'wasd');
   const instance = new CountdownTimer();
   instance.on('tick', (display, state) => { countdownRep.value = { display, state } });
   instance.update(); //Broadcast paused state on startup
 
-  nodecg.listenFor('countdown.start', 'wasd2021', (msg) => { instance.start(msg); });
-  nodecg.listenFor('countdown.pause', 'wasd2021', () => { instance.pause(); });
+  nodecg.listenFor('countdown.start', 'wasd', (msg) => { instance.start(msg); });
+  nodecg.listenFor('countdown.pause', 'wasd', () => { instance.pause(); });
 };

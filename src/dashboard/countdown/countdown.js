@@ -3,7 +3,7 @@ import m from 'mithril';
 import '../common.css';
 import './countdown.css';
 
-const countdownRep = NodeCG.Replicant('countdown', 'wasd2021');
+const countdownRep = NodeCG.Replicant('countdown', 'wasd');
 
 class CountdownControl {
   oninit(vnode) {
@@ -26,13 +26,13 @@ class CountdownControl {
         m('button.countdown-button', {
           disabled: running,
           onclick: () => {
-            NodeCG.sendMessageToBundle('countdown.start', 'wasd2021', this.display);
+            NodeCG.sendMessageToBundle('countdown.start', 'wasd', this.display);
           }
         }, 'Start'),
         m('button.countdown-button', {
           disabled: !running,
           onclick: () => {
-            NodeCG.sendMessageToBundle('countdown.pause', 'wasd2021');
+            NodeCG.sendMessageToBundle('countdown.pause', 'wasd');
             this.display = vnode.attrs.countdown.display;
           }
         }, 'Pause'),

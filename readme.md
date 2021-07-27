@@ -1,10 +1,10 @@
-# wasd2021
+# wasd2021-summer
 
 ## about
 
 This is a [NodeCG](https://nodecg.dev) bundle used for broadcast graphics for
 the videogame speedrunning marathon event [Warwick's Awesome Speedruns & Demos
-2021](https://wasd.warwick.gg).
+2021 Summer](https://warwickspeed.run).
 
 ### dependant NodeCG bundles
 
@@ -33,11 +33,13 @@ the videogame speedrunning marathon event [Warwick's Awesome Speedruns & Demos
 
 ### break screen
 
-![The WASD2021 NodeCG break screen overlay](./.github/break_screen.png)
+<!--![The WASD2021 NodeCG break screen overlay](./.github/break_screen.png)-->
+TBD
 
 ### game screen
 
-![The WASD2021 NodeCG game screen overlay](./.github/game_screen.png)
+<!--![The WASD2021 NodeCG game screen overlay](./.github/game_screen.png)-->
+TBD
 
 ## installation
 
@@ -71,7 +73,7 @@ $ npm ci
 $ cd ..
 
 # wasd2021
-$ git clone --depth 1 git@github.com:jai-x/wasd2021.git
+$ git clone --depth 1 git@github.com:jai-x/wasd2021-summer.git
 $ cd wasd2021
 $ npm ci
 ```
@@ -79,7 +81,7 @@ $ npm ci
 ### build
 
 ```shell
-$ cd wasd2021/bundles/wasd2021
+$ cd nodecg/bundles/wasd2021-summer
 $ npm run build
 ```
 
@@ -99,16 +101,6 @@ credentials.
 
 ```shell
 $ npm run start
-```
-
-### or use docker
-
-```shell
-# build
-$ docker build -t wasd2021:dev .
-
-# run
-$ docker run -p 9090:9090 wasd2021:dev
 ```
 
 ## license

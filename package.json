@@ -1,11 +1,12 @@
 {
-  "name": "wasd2021",
+  "name": "wasd2021-summer",
   "version": "0.1.0",
-  "description": "A nodecg broadcast graphics bundle for Warwick's Awesome Speedruns & Demos 2021",
+  "description": "A nodecg broadcast graphics bundle for Warwick's Awesome Speedruns & Demos 2021 Summer",
   "main": "index.js",
   "scripts": {
     "build": "rollup --config",
     "watch": "rollup --config --watch",
+    "link-config": "rm -rf '../../cfg'; ln -s './bundles/wasd2021-summer/cfg' '../../cfg'",
     "clean": "rm -rf ./graphics",
     "start": "node ../../index.js"
   },
@@ -19,9 +20,9 @@
   "author": "Jai Sharma <jai@jai.moe>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jai-x/wasd2021/issues"
+    "url": "https://github.com/jai-x/wasd2021-summer/issues"
   },
-  "homepage": "https://github.com/jai-x/wasd2021#readme",
+  "homepage": "https://github.com/jai-x/wasd2021-summer#readme",
   "nodecg": {
     "compatibleRange": "~1.8.0",
     "bundleDependencies": {

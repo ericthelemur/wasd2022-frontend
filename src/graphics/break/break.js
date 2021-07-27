@@ -14,8 +14,8 @@ const replicants = {
   run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
   runArray: NodeCG.Replicant('runDataArray', 'nodecg-speedcontrol'),
   currentSong: NodeCG.Replicant('currentSong', 'ncg-spotify'),
-  countdown: NodeCG.Replicant('countdown', 'wasd2021'),
-  currentVideo: NodeCG.Replicant('currentVideo', 'wasd2021'),
+  countdown: NodeCG.Replicant('countdown', 'wasd'),
+  currentVideo: NodeCG.Replicant('currentVideo', 'wasd'),
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),
   challenges: NodeCG.Replicant('challenges', 'nodecg-tiltify'),
 };

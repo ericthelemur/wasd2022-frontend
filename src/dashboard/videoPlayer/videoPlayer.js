@@ -4,8 +4,8 @@ import '../common.css';
 import './videoPlayer.css';
 
 const replicants = {
-  currentVideo: NodeCG.Replicant('currentVideo', 'wasd2021'),
-  seVideos: NodeCG.Replicant('assets:specialEffectVideos', 'wasd2021'),
+  currentVideo: NodeCG.Replicant('currentVideo', 'wasd'),
+  seVideos: NodeCG.Replicant('assets:specialEffectVideos', 'wasd'),
 };
 
 class VideoPlayerControl {
@@ -31,11 +31,11 @@ class VideoPlayerControl {
       m('.video-control-buttons', [
         m('button.video-control-button', {
           disabled: playing,
-          onclick: () => { NodeCG.sendMessageToBundle('currentVideo.start', 'wasd2021'); }
+          onclick: () => { NodeCG.sendMessageToBundle('currentVideo.start', 'wasd'); }
         }, 'Start'),
         m('button.video-control-button', {
           disabled: !playing,
-          onclick: () => { NodeCG.sendMessageToBundle('currentVideo.stop', 'wasd2021'); }
+          onclick: () => { NodeCG.sendMessageToBundle('currentVideo.stop', 'wasd'); }
         },'Stop'),
       ]),
     ]);

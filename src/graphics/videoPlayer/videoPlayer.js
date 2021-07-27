@@ -44,7 +44,7 @@ export default class VideoPlayer {
     }
 
     // bind message listeners
-    nodecg.listenFor('currentVideo.start', 'wasd2021', () => { playerPlay() });
-    nodecg.listenFor('currentVideo.stop', 'wasd2021', () => { playerStop() });
+    nodecg.listenFor('currentVideo.start', 'wasd', () => { playerPlay() });
+    nodecg.listenFor('currentVideo.stop', 'wasd', () => { playerStop() });
   }
 }
