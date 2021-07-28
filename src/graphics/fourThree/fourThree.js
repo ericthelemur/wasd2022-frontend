@@ -9,12 +9,13 @@ import './fourThree.css';
 import TimerComponent from '../timer/timer.js';
 import RunnersComponent from '../runners/runners.js';
 import CouchComponent from '../couch/couch.js';
-import StarfallComponent from '../starfall/starfall.js';
+import BeachBackground from '../beach/beach.js';
 
 const replicants = {
   run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
   timer: NodeCG.Replicant('timer', 'nodecg-speedcontrol'),
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),
+  backgroundMode: NodeCG.Replicant('backgroundMode', 'wasd'),
 };
 
 class RunGameComponent {
@@ -82,7 +83,7 @@ class Logos {
 class FourThreeComponent {
   view(vnode) {
     return m('.graphic .overlay', [
-      m(StarfallComponent),
+      m(BeachBackground, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
       m('.game'),
       m('.left', [
         m('.run-info', [
@@ -113,6 +114,7 @@ NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
         run: replicants.run.value,
         time: replicants.timer.value.time,
         total: Math.floor(replicants.total.value),
+        backgroundModeRep: replicants.backgroundMode,
       });
     }
   });

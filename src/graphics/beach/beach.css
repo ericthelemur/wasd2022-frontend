@@ -1,0 +1,39 @@
+.beach {
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+}
+
+.beach.night-sky {
+  background-image: url('../assets/wasd-beach-night-sky-1080.png');
+}
+
+.beach.night-foreground {
+  background-image: url('../assets/wasd-beach-night-front-1080.png');
+}
+
+.beach.night-lighthouse-inner {
+  background-image: url('../assets/wasd-beach-night-lighthouse-inner-1080.png');
+  opacity: 0;
+}
+
+.beach.night-lighthouse-outer {
+  background-image: url('../assets/wasd-beach-night-lighthouse-outer-1080.png');
+  opacity: 0;
+}
+
+.beach.day-sky {
+  background-image: url('../assets/wasd-beach-day-sky-1080.png');
+  opacity: 0;
+}
+
+.beach.night-stars {
+  background-image: url('../assets/wasd-beach-night-stars-1080.png');
+  opacity: 0;
+}
+
+.beach.day-foreground {
+  background-image: url('../assets/wasd-beach-day-front-1080.png');
+  opacity: 0;
+}
+

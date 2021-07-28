@@ -4,7 +4,11 @@ import gsap from 'gsap';
 import '../common.css';
 import './problems.css';
 
-import StarfallComponent from '../starfall/starfall.js';
+import BeachBackground from '../beach/beach.js';
+
+const replicants = {
+  backgroundMode: NodeCG.Replicant('backgroundMode', 'wasd'),
+};
 
 class ProblemsImages {
   view() {
@@ -21,8 +25,6 @@ class ProblemsImages {
   }
 
   oncreate(vnode) {
-    console.log(vnode.dom.children);
-
     if (this.anim) {
       this.anim.kill();
     }
@@ -40,13 +42,19 @@ class ProblemsImages {
 }
 
 class ProblemsComponent {
-  view() {
+  view(vnode) {
     return m('.graphic .fullscreen', [
-      m(StarfallComponent),
+      m(BeachBackground, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
       m(ProblemsImages),
       m('.problems-text', 'Technical Difficulties'),
     ]);
   }
 }
 
-m.mount(document.body, ProblemsComponent);
+NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
+  m.mount(document.body, {
+    view: () => m(ProblemsComponent, {
+      backgroundModeRep: replicants.backgroundMode,
+    })
+  });
+});

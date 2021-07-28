@@ -45,6 +45,12 @@
         "title": "Countdown"
       },
       {
+        "file": "backgroundMode/index.html",
+        "width": 2,
+        "name": "backgroundMode",
+        "title": "Background Mode"
+      },
+      {
         "file": "videoPlayer/index.html",
         "width": 3,
         "name": "videoPlayer",

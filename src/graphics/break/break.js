@@ -5,7 +5,7 @@ import { get } from 'lodash';
 import '../common.css';
 import './break.css';
 
-import StarfallComponent from '../starfall/starfall.js';
+import BeachBackground from '../beach/beach.js';
 import CurrentSongComponent from '../currentSong/currentSong.js';
 import VideoPlayer from '../videoPlayer/videoPlayer.js';
 import { nextRuns, NextRunsComponent } from '../nextRuns/nextRuns.js';
@@ -15,6 +15,7 @@ const replicants = {
   runArray: NodeCG.Replicant('runDataArray', 'nodecg-speedcontrol'),
   currentSong: NodeCG.Replicant('currentSong', 'ncg-spotify'),
   countdown: NodeCG.Replicant('countdown', 'wasd'),
+  backgroundMode: NodeCG.Replicant('backgroundMode', 'wasd'),
   currentVideo: NodeCG.Replicant('currentVideo', 'wasd'),
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),
   challenges: NodeCG.Replicant('challenges', 'nodecg-tiltify'),
@@ -65,7 +66,7 @@ class Incentives {
 class BreakComponent {
   view(vnode) {
     return m('.graphic .fullscreen', [
-      m(StarfallComponent),
+      m(BeachBackground, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
       m('.break-container', [
         m('.left', [
           m('.logo .wasd'),
@@ -106,6 +107,7 @@ NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
         currentSong: replicants.currentSong.value,
         total: Math.floor(replicants.total.value),
         countdown: replicants.countdown.value,
+        backgroundModeRep: replicants.backgroundMode,
         currentVideo: replicants.currentVideo.value,
         nextRuns: nextRuns(replicants.run.value, replicants.runArray.value),
         incentives: replicants.challenges.value,
