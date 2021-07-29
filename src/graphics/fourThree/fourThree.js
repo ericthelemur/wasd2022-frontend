@@ -105,20 +105,6 @@ class FourThreeComponent {
       ]),
     ]);
   }
-
-  oncreate(vnode) {
-    const rep = vnode.attrs.backgroundModeRep;
-
-    rep.on('change', (newMode) => {
-      if (newMode === 'day') {
-        return;
-      }
-
-      if (newMode === 'night') {
-        return;
-      }
-    });
-  }
 }
 
 NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
