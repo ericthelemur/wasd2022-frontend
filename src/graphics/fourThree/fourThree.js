@@ -10,6 +10,7 @@ import TimerComponent from '../timer/timer.js';
 import RunnersComponent from '../runners/runners.js';
 import CouchComponent from '../couch/couch.js';
 import BeachBackground from '../beach/beach.js';
+import BarComponent from '../bar/bar.js';
 
 const replicants = {
   run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
@@ -82,27 +83,30 @@ class Logos {
 
 class FourThreeComponent {
   view(vnode) {
-    return m('.graphic .overlay', [
+    return m('.graphic .fullscreen', [
       m(BeachBackground, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
-      m('.game'),
-      m('.left', [
-        m('.run-info', [
-          m(RunGameComponent, { game: get(vnode, 'attrs.run.game') }),
-          m(RunDetailsComponent, { run: get(vnode, 'attrs.run') }),
+      m('.graphic .overlay', [
+        m('.game'),
+        m('.left', [
+          m('.run-info', [
+            m(RunGameComponent, { game: get(vnode, 'attrs.run.game') }),
+            m(RunDetailsComponent, { run: get(vnode, 'attrs.run') }),
+          ]),
+          m('.run-spacer'),
+          m('.run-timing', [
+            m(TimerComponent, { time: vnode.attrs.time }),
+            m('.run-estimate', `Estimate: ${get(vnode, 'attrs.run.estimate')}`),
+          ]),
+          m('.cam'),
+          m(RunnersComponent, {
+            players: get(vnode, 'attrs.run.teams[0].players'),
+            customData: get(vnode, 'attrs.run.customData'),
+          }),
+          m(CouchComponent, { customData: get(vnode, 'attrs.run.customData') }),
+          m(Logos, { hold: 22 }),
         ]),
-        m('.run-spacer'),
-        m('.run-timing', [
-          m(TimerComponent, { time: vnode.attrs.time }),
-          m('.run-estimate', `Estimate: ${get(vnode, 'attrs.run.estimate')}`),
-        ]),
-        m('.cam'),
-        m(RunnersComponent, {
-          players: get(vnode, 'attrs.run.teams[0].players'),
-          customData: get(vnode, 'attrs.run.customData'),
-        }),
-        m(CouchComponent, { customData: get(vnode, 'attrs.run.customData') }),
-        m(Logos, { hold: 22 }),
       ]),
+      m(BarComponent, { total: vnode.attrs.total }),
     ]);
   }
 }

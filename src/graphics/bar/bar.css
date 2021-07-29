@@ -1,11 +1,12 @@
 .bar {
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 
   width: 1920px;
   height: 70px;
 
-  background-color: var(--wasd-pink);
   color: var(--wasd-white);
 
   font-family: 'DaggerSquareOblique';
@@ -15,23 +16,25 @@
   flex-direction: row;
   align-items: center;
 
+  border-top: 1px solid var(--wasd-white);
+
   padding-right: 15px;
   padding-left: 5px;
 }
 
-.logo {
+.bar-logo {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.logo.wasd-icon {
+.bar-logo.wasd-icon {
   width: 70px;
   height: 70px;
   background-image: url('../assets/wasd-avatar.png');
 }
 
-.logo.special-effect {
+.bar-logo.special-effect {
   height: 70px;
   width: 200px;
   margin-left: -12px;

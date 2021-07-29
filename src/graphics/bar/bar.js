@@ -5,13 +5,29 @@ import moment from 'moment';
 import '../common.css';
 import './bar.css';
 
-import { nextRuns } from '../nextRuns/nextRuns.js';
+class Ticker extends EventTarget {
+  constructor(intervalMs) {
+    super();
 
-const replicants = {
-  run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
-  runArray: NodeCG.Replicant('runDataArray', 'nodecg-speedcontrol'),
-  total: NodeCG.Replicant('total', 'nodecg-tiltify'),
-};
+    if (typeof intervalMs !== 'number') {
+        throw new TypeError('Expected number');
+    }
+
+    this.intervalMs = intervalMs;
+  }
+
+  start() {
+    this.ticker = setInterval(this.tick.bind(this), this.intervalMs);
+  }
+
+  stop() {
+    clearInterval(this.ticker);
+  }
+
+  tick() {
+    this.dispatchEvent(new Event('tick'));
+  }
+}
 
 class CTA {
   view(vnode) {
@@ -39,16 +55,18 @@ class CTA {
   }
 }
 
-class BarComponent {
+export default class BarComponent {
   view(vnode) {
     return m('.bar', [
+      /*
       m('.name', [
-        m('.logo.wasd-icon'),
+        m('.bar-logo.wasd-icon'),
         m('span', 'WASD 2021'),
       ]),
       m('.v-space'),
+      */
       m('.donos', [
-        m('.logo.special-effect'),
+        m('.bar-logo.special-effect'),
         m('span', `£${vnode.attrs.total}`),
       ]),
       m('.v-space'),
@@ -65,48 +83,14 @@ class BarComponent {
       m('span', moment().format('HH:mm')),
     ]);
   }
-}
 
-
-NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
-  m.mount(document.body, {
-    view: () => {
-      return m(BarComponent, {
-        total: Math.floor(replicants.total.value),
-        nextRuns: nextRuns(replicants.run.value, replicants.runArray.value),
-      });
-    }
-  });
-});
-
-Object.values(replicants).forEach((rep) => {
-  rep.on('change', () => { m.redraw(); });
-});
-
-class Ticker extends EventTarget {
-  constructor(intervalMs) {
-    super();
-
-    if (typeof intervalMs !== 'number') {
-        throw new TypeError('Expected number');
-    }
-
-    this.intervalMs = intervalMs;
+  oncreate(vnode) {
+    this.ticker = new Ticker(5000); // 5 seconds
+    this.ticker.addEventListener('tick', () => { m.redraw(); });
+    this.ticker.start();
   }
 
-  start() {
-    this.ticker = setInterval(this.tick.bind(this), this.intervalMs);
-  }
-
-  stop() {
-    clearInterval(this.ticker);
-  }
-
-  tick() {
-    this.dispatchEvent(new Event('tick'));
+  onremove(vnode) {
+    this.ticker.stop();
   }
 }
-
-const ticker = new Ticker(5000); // 5 seconds
-ticker.addEventListener('tick', () => { m.redraw(); });
-ticker.start();
