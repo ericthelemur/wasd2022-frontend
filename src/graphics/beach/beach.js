@@ -3,6 +3,9 @@ import gsap from 'gsap';
 
 import './beach.css';
 
+const textShadowDay = '0px 0px 3px rgb(0, 0, 0, 1)';
+const textShadowNight = '0px 0px 3px rgb(0, 0, 0, 0)';
+
 export default class BeachBackground {
   view(vnode) {
     return m('#beach-background', [
@@ -59,6 +62,7 @@ export default class BeachBackground {
           gsap.set('#lighthouse',           { opacity: 0 });
           gsap.set('.beach.day-foreground', { opacity: 1 });
           gsap.set('.beach.day-sky',        { opacity: 1 });
+          gsap.set(document.body, { textShadow: textShadowDay });
           return;
         }
 
@@ -67,6 +71,7 @@ export default class BeachBackground {
           gsap.set('#lighthouse',           { opacity: 1 });
           gsap.set('.beach.day-foreground', { opacity: 0 });
           gsap.set('.beach.day-sky',        { opacity: 0 });
+          gsap.set(document.body, { textShadow: textShadowNight });
           return;
         }
       }
@@ -77,9 +82,10 @@ export default class BeachBackground {
         tl.set('#lighthouse',                { opacity: 0 });
 
         tl.fromTo('.beach.night-sky',        { filter: 'brightness(1)' }, { filter: 'brightness(1.9)', duration: 3 });
-        //tl.fromTo('.beach.night-foreground', { filter: 'brightness(1)' }, { filter: 'brightness(1.2)', duration: 3 });
 
-        tl.to('.beach.day-foreground',       { opacity: 1, duration: 10 });
+        tl.set(document.body, { textShadow: textShadowDay, duration: 5 });
+
+        tl.to('.beach.day-foreground',       { opacity: 1, duration: 10 }, '<');
         tl.to('.beach.day-sky',              { opacity: 1, duration: 6 }, '<+1');
 
         tl.set('.beach.night-foreground',    { filter: 'brightness(1)' });
@@ -96,6 +102,9 @@ export default class BeachBackground {
         tl.fromTo('.beach.day-sky',        { filter: 'brightness(1)' }, { filter: 'brightness(0.2)', duration: 3 }, '<');
         tl.to('.beach.day-foreground',     { opacity: 0, duration: 6 }, '>-1');
         tl.to('.beach.day-sky',            { opacity: 0, duration: 6 }, '<');
+
+        tl.set(document.body, { textShadow: textShadowNight, duration: 5 }, '<');
+
         // show lighthouse anim
         tl.to('#lighthouse',               { opacity: 1, duration: 2 });
         tl.to('.beach.night-stars', { opacity: 1, duration: 5 });
