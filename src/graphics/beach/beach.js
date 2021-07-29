@@ -43,7 +43,34 @@ export default class BeachBackground {
     });
     lighthouseTl.play();
 
-    rep.on('change', (newMode) => {
+    rep.on('change', (newMode, oldMode) => {
+      console.log(`MODE CHANGE ${oldMode} -> ${newMode}`);
+
+      // hard set to state on init when no old more
+      if (!oldMode) {
+        // reset
+        gsap.set('.beach.day-foreground',   { filter: 'brightness(1)' });
+        gsap.set('.beach.day-sky',          { filter: 'brightness(1)' });
+        gsap.set('.beach.night-foreground', { filter: 'brightness(1)' });
+        gsap.set('.beach.night-sky',        { filter: 'brightness(1)' });
+
+        if (newMode === 'day') {
+          gsap.set('.beach.night-stars',    { opacity: 0 });
+          gsap.set('#lighthouse',           { opacity: 0 });
+          gsap.set('.beach.day-foreground', { opacity: 1 });
+          gsap.set('.beach.day-sky',        { opacity: 1 });
+          return;
+        }
+
+        if (newMode === 'night') {
+          gsap.set('.beach.night-stars',    { opacity: 1 });
+          gsap.set('#lighthouse',           { opacity: 1 });
+          gsap.set('.beach.day-foreground', { opacity: 0 });
+          gsap.set('.beach.day-sky',        { opacity: 0 });
+          return;
+        }
+      }
+
       if (newMode === 'day') {
         const tl = gsap.timeline({ paused: true });
         tl.to('.beach.night-stars',          { opacity: 0, duration: 3 });
