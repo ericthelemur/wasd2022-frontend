@@ -5,8 +5,7 @@
   width: 1346px;
   height: 100%;
 
-  border-left: 5px solid var(--wasd-pink);
-
+  border-left: 5px solid var(--wasd-white);
   background-color: var(--chroma-green);
 }
 
@@ -25,8 +24,8 @@
 .cam {
   width: 100%;
   min-height: 330px;
-  border-bottom: 5px solid var(--wasd-pink);
-  border-top: 5px solid var(--wasd-pink);
+  border-bottom: 5px solid var(--wasd-white);
+  border-top: 5px solid var(--wasd-white);
   background-color: var(--chroma-green);
 }
 

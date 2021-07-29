@@ -13,7 +13,7 @@
 }
 
 .couch-label {
-  color: var(--wasd-white-muted);
+  color: var(--wasd-white);
   font-size: 20px;
   margin-bottom: 5px;
 }

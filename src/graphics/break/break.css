@@ -63,7 +63,7 @@
   width: 90%;
   height: 3px;
   border-radius: 3px;
-  background: var(--wasd-pink);
+  background: var(--wasd-white);
   margin: 20px 0;
 }
 
@@ -71,7 +71,7 @@
   height: 100%;
   width: 3px;
   border-radius: 3px;
-  background: var(--wasd-pink);
+  background: var(--wasd-white);
   margin: 0 20px;
 }
 
@@ -106,7 +106,7 @@
 
 .total-label {
   font-size: 30px;
-  color: var(--wasd-white-muted);
+  color: var(--wasd-white);
 }
 
 .total-amount {
@@ -130,7 +130,7 @@
 
 .incentives-label {
   font-size: 30px;
-  color: var(--wasd-white-muted);
+  color: var(--wasd-white);
 }
 
 .incentives-list {
@@ -176,7 +176,7 @@
   align-items: center;
   justify-content: center;
 
-  border: solid 2px var(--wasd-pink);
+  border: solid 2px var(--wasd-white);
   border-radius: 10px;
   width: 100%;
 

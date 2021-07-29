@@ -19,7 +19,7 @@
 }
 
 .next-runs-label {
-  color: var(--wasd-white-muted);
+  color: var(--wasd-white);
   font-size: 30px;
   margin-bottom: 20px;
 }
