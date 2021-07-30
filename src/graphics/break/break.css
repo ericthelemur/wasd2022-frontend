@@ -34,7 +34,7 @@
 
 .countdown-label {
   font-size: 30px;
-  color: var(--wasd-white-muted);
+  color: var(--wasd-white);
 }
 
 .countdown-time {
