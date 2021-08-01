@@ -1,8 +1,8 @@
 .couch-container {
+  width: 95%;
   font-family: 'DaggerSquareOblique';
   letter-spacing: 2px;
   color: var(--wasd-white);
-  width: 90%;
   padding: 12px 0;
 
   display: flex;
