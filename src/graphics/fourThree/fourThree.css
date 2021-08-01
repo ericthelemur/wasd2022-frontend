@@ -92,22 +92,44 @@
   justify-content: center;
 }
 
+.logo-multi {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .logo {
   position: absolute;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .logo.wasd {
   height: 80%;
-  background-image: url('../assets/wasd-keys.svg');
+  background-image: url('../assets/wasd-keys-summer.svg');
 }
 
-.logo.special-effect {
+.logo.wasd-shadow {
+  height: 80%;
+  background-image: url('../assets/wasd-keys-summer-shadow.svg');
+}
+
+.logo.special-effect-white {
   height: 100%;
-  background-image: url('../assets/specialeffect-white.png');
+  width: 90%;
+  background-image: url('../assets/specialeffect-proud-white.png');
+}
+
+.logo.special-effect-orange {
+  height: 100%;
+  width: 90%;
+  background-image: url('../assets/specialeffect-proud-orange.png');
 }
 
 /* --- BEGIN OVERRIDES --- */
