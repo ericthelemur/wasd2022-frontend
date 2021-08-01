@@ -13,7 +13,10 @@ const replicants = {
 class ProblemsImages {
   view() {
     return m('div', [
-      m('.problems-image .wasd'),
+      m('div', [
+        m('.problems-image .wasd #night-element'),
+        m('.problems-image .wasd-shadow #day-element'),
+      ]),
       m('.problems-image .notlikethis'),
     ]);
   }
