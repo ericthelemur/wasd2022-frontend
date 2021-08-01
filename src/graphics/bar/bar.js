@@ -73,10 +73,10 @@ export default class BarComponent {
       m(CTA, {
         hold: 30,
         ctas: [
-        'This is Warwick\'s Awesome Speedruns & Demos 2021',
-        'See the full schedule at wasd.warwick.gg/schedule',
-        'WASD 2021 is raising money for SpecialEffect',
-        'Donate now at wasd.warwick.gg/donate',
+        'This is Warwick\'s Awesome Speedruns & Demos SUMMER 2021',
+        'See the full schedule at warwickspeed.run/schedule',
+        'WASD SUMMER 2021 is raising money for SpecialEffect',
+        'Donate now at warwickspeed.run/donate',
         ]
       }),
       m('.v-space'),
