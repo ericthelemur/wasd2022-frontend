@@ -69,7 +69,7 @@ export default class BarComponent {
         m('.bar-logo.special-effect'),
         m('span', `£${vnode.attrs.total}`),
       ]),
-      m('.v-space'),
+      m('.bar-v-space'),
       m(CTA, {
         hold: 30,
         ctas: [
@@ -79,7 +79,7 @@ export default class BarComponent {
         'Donate now at warwickspeed.run/donate',
         ]
       }),
-      m('.v-space'),
+      m('.bar-v-space'),
       m('span', moment().format('HH:mm')),
     ]);
   }
