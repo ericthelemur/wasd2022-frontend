@@ -8,6 +8,7 @@ import './break.css';
 import BeachBackground from '../beach/beach.js';
 import CurrentSongComponent from '../currentSong/currentSong.js';
 import VideoPlayer from '../videoPlayer/videoPlayer.js';
+import BarComponent from '../bar/bar.js';
 import { nextRuns, NextRunsComponent } from '../nextRuns/nextRuns.js';
 
 const replicants = {
@@ -67,7 +68,48 @@ class BreakComponent {
   view(vnode) {
     return m('.graphic .fullscreen', [
       m(BeachBackground, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
-      m('.break-container', [
+      m('.graphic .overlay', [
+        m('.break-container', [
+          m('.break-left', [
+            m('.break-logo-multi .wasd', [
+              m('.break-logo wasd #night-element'),
+              m('.break-logo wasd-shadow #day-element'),
+            ]),
+            m('.break-logo-multi .special-effect', [
+              m('.break-logo special-effect-white #night-element'),
+              m('.break-logo special-effect-orange #day-element'),
+            ]),
+            m('.break-h-space'),
+            m('.countdown-container', [
+              m('.countdown-label', 'BACK SOON'),
+              m('.countdown-time', vnode.attrs.countdown.display),
+            ]),
+            m(CurrentSongComponent, vnode.attrs.currentSong),
+          ]),
+          m('.break-v-space'),
+          m('.break-right', [
+            m('.break-next-run-container', [
+              m('.break-next-run-label', 'Coming Up Next'),
+              (vnode.attrs.nextRuns.length === 0) ? m('.break-next-run-game', 'NO RUNS!') : [
+                m('.break-next-run-game', vnode.attrs.nextRuns[0].game),
+                m('.break-next-run-details', [
+                  m('span', vnode.attrs.nextRuns[0].category),
+                  m('span', '·'),
+                  m('span', vnode.attrs.nextRuns[0].system),
+                  m('span', '·'),
+                  m('span', vnode.attrs.nextRuns[0].teams[0].players.map(p => p.name).join(', ')),
+                  m('span', '·'),
+                  m('span', vnode.attrs.nextRuns[0].estimate),
+                ]),
+              ]
+            ]),
+            m('.break-h-space'),
+            m('.break-multibox', [
+            ]),
+          ]),
+        ]),
+      ]),
+      /*
         m('.left', [
           m('.logo .wasd'),
           m('.logo .special-effect'),
@@ -95,6 +137,8 @@ class BreakComponent {
           m(VideoPlayer, { currentVideo: vnode.attrs.currentVideo }),
         ]),
       ]),
+      */
+      m(BarComponent, { total: vnode.attrs.total }),
     ]);
   }
 }
