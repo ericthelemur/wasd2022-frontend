@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rollup --config",
     "watch": "rollup --config --watch",
-    "link-config": "rm -rf '../../cfg'; ln -s './bundles/wasd2021-summer/cfg' '../../cfg'",
+    "copy-config": "cp ./cfg/* ../../cfg",
     "clean": "rm -rf ./graphics",
     "start": "node ../../index.js"
   },
