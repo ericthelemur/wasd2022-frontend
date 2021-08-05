@@ -51,6 +51,16 @@
         "name": "Couch 2 Pronouns (optional)",
         "key": "c2Pronouns",
         "ignoreMarkdown": true
+      },
+      {
+        "name": "Couch 3 Name (optional)",
+        "key": "c3Name",
+        "ignoreMarkdown": true
+      },
+      {
+        "name": "Couch 3 Pronouns (optional)",
+        "key": "c3Pronouns",
+        "ignoreMarkdown": true
       }
     ]
   }

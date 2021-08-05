@@ -25,6 +25,7 @@ export default class CouchComponent {
     const couch = [
       { name: get(vnode, 'attrs.customData.c1Name'), pronouns: get(vnode, 'attrs.customData.c1Pronouns') },
       { name: get(vnode, 'attrs.customData.c2Name'), pronouns: get(vnode, 'attrs.customData.c2Pronouns') },
+      { name: get(vnode, 'attrs.customData.c3Name'), pronouns: get(vnode, 'attrs.customData.c3Pronouns') },
     ];
 
     if (!(couch[0].name || couch[1].name)) {
