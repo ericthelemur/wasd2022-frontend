@@ -30,7 +30,7 @@ body {
   padding: 0;
   border: 0;
 
-
+  /* Flexbox memes to center the body even when zoomed out */
   display: flex;
   justify-content: center;
   align-items: center;
