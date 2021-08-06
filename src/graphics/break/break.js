@@ -9,7 +9,7 @@ import BeachBackground from '../beach/beach.js';
 import CurrentSongComponent from '../currentSong/currentSong.js';
 import VideoPlayer from '../videoPlayer/videoPlayer.js';
 import BarComponent from '../bar/bar.js';
-import { nextRuns, NextRunsComponent } from '../nextRuns/nextRuns.js';
+import { nextRuns } from '../nextRuns/nextRuns.js';
 
 const replicants = {
   run: NodeCG.Replicant('runDataActiveRun', 'nodecg-speedcontrol'),
@@ -27,12 +27,12 @@ class Incentive {
     const { name, amount, totalAmountRaised } = vnode.attrs.incentive;
     const [ gameName, incentiveName ] = name.split('-').map(s => s.trim());
 
-    return m('.incentive-container', [
-      m('.incentive-game', gameName),
-      m('.incentive-name', incentiveName),
-      m('.incentive-bar', [
-        m('.incentive-progress'),
-        m('.incentive-amount', `£${totalAmountRaised} / £${amount}`),
+    return m('.break-incentive-container', [
+      m('.break-incentive-game', gameName),
+      m('.break-incentive-name', incentiveName),
+      m('.break-incentive-bar', [
+        m('.break-incentive-progress'),
+        m('.break-incentive-amount', `£${totalAmountRaised} / £${amount}`),
       ]),
     ]);
   }
@@ -55,11 +55,82 @@ class Incentive {
 
 class Incentives {
   view(vnode) {
-    return m('.incentives-container', [
-      m('.incentives-label', 'DONATION INCENTIVES'),
-      m('.incentives-list', ...vnode.attrs.incentives.filter(i => i.active).map((i) => {
+    return m('.break-incentives-container', [
+      m('.break-h-space'),
+      m('.break-right-label', 'Donation Incentives'),
+      m('.break-h-space'),
+      m('.break-incentives-list', ...vnode.attrs.incentives.filter(i => i.active).map((i) => {
         return m(Incentive, { incentive: i, key: i.id });
       })),
+    ]);
+  }
+}
+
+class BreakMultiBox {
+  view(vnode) {
+    return m('.break-multibox', [
+      m('.break-multibox-item', [
+        m('.break-later-on', [
+          m('.break-h-space'),
+          m('.break-right-label', 'Later On'),
+          m('.break-h-space'),
+          (
+            (vnode.attrs.nextRuns.length < 2)
+            ? m('.break-next-run-game', 'NO RUNS!')
+            : vnode.attrs.nextRuns.slice(1).map(run => m(Run, { run: run }))
+          ),
+        ]),
+      ]),
+      m('.break-multibox-item', [
+        m(Incentives, { incentives: vnode.attrs.incentives }),
+      ]),
+      m('.break-multibox-item', [
+        m('.break-h-space'),
+        m('.break-right-label', 'THIRD BOX'),
+        m('.break-h-space'),
+        m('div', 'SOMETHING ABOUT DONATING FOR NIGHT VS DAY'),
+      ])
+    ]);
+  }
+
+  oncreate(vnode) {
+    const boxes = Array.from(vnode.dom.children);
+
+    const tl = gsap.timeline({ repeat: -1, paused: true });
+
+    boxes.forEach((box) => {
+      gsap.set(box, { opacity: 0 });
+      tl.to(box, { opacity: 1 });
+      tl.to({}, 2, {});
+      tl.to(box, { opacity: 0 });
+      tl
+    });
+
+    this.anim = tl;
+
+    tl.play();
+  }
+
+  onremove(vnode) {
+    if (this.anim) {
+      this.anim.kill();
+    }
+  }
+}
+
+class Run {
+  view(vnode) {
+    return m('.break-next-run-container', [
+      m('.break-next-run-game', vnode.attrs.run.game),
+      m('.break-next-run-details', [
+        m('span', vnode.attrs.run.category),
+        m('span', '·'),
+        m('span', vnode.attrs.run.system),
+        m('span', '·'),
+        m('span', get(vnode, 'attrs.run.teams[0].players', []).map(p => p.name).join(', ')),
+        m('span', '·'),
+        m('span', vnode.attrs.run.estimate),
+      ])
     ]);
   }
 }
@@ -88,56 +159,16 @@ class BreakComponent {
           ]),
           m('.break-v-space'),
           m('.break-right', [
-            m('.break-next-run-container', [
-              m('.break-next-run-label', 'Coming Up Next'),
-              (vnode.attrs.nextRuns.length === 0) ? m('.break-next-run-game', 'NO RUNS!') : [
-                m('.break-next-run-game', vnode.attrs.nextRuns[0].game),
-                m('.break-next-run-details', [
-                  m('span', vnode.attrs.nextRuns[0].category),
-                  m('span', '·'),
-                  m('span', vnode.attrs.nextRuns[0].system),
-                  m('span', '·'),
-                  m('span', vnode.attrs.nextRuns[0].teams[0].players.map(p => p.name).join(', ')),
-                  m('span', '·'),
-                  m('span', vnode.attrs.nextRuns[0].estimate),
-                ]),
-              ]
-            ]),
             m('.break-h-space'),
-            m('.break-multibox', [
-            ]),
+            m('.break-right-label', 'Coming Up Next'),
+            m('.break-h-space'),
+            ((vnode.attrs.nextRuns.length === 0)
+              ? m('.break-next-run-game', 'NO RUNS!')
+              : m(Run, { run: vnode.attrs.nextRuns[0] })),
+            m(BreakMultiBox, { nextRuns: vnode.attrs.nextRuns, incentives: vnode.attrs.incentives }),
           ]),
         ]),
       ]),
-      /*
-        m('.left', [
-          m('.logo .wasd'),
-          m('.logo .special-effect'),
-          m('.h-space'),
-          m('.countdown-container', [
-            m('.countdown-label', 'BACK SOON'),
-            m('.countdown-time', vnode.attrs.countdown.display),
-          ]),
-          m(CurrentSongComponent, vnode.attrs.currentSong),
-        ]),
-        m('.v-space'),
-        m('.right', [
-          m('.right-schedule', [
-            m(NextRunsComponent, { nextRuns: vnode.attrs.nextRuns, key: get(vnode, 'attrs.nextRuns[0].id') })
-          ]),
-          m('.v-space'),
-          m('.right-info', [
-            m('.total-container', [
-              m('.total-label', 'TOTAL RAISED'),
-              m('.total-amount', `£${vnode.attrs.total}`),
-            ]),
-            m('.h-space'),
-            m(Incentives, { incentives: vnode.attrs.incentives }),
-          ]),
-          m(VideoPlayer, { currentVideo: vnode.attrs.currentVideo }),
-        ]),
-      ]),
-      */
       m(BarComponent, { total: vnode.attrs.total }),
     ]);
   }

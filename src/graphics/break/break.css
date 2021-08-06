@@ -14,16 +14,14 @@
 
 .break-v-space {
   height: 100%;
-  width: 2px;
-  background: var(--wasd-white);
-  margin: 0 20px;
+  min-width: 2px;
+  background-color: var(--wasd-white);
 }
 
 .break-h-space {
   width: 90%;
-  height: 2px;
-  background: var(--wasd-white);
-  margin: 20px 0;
+  min-height: 2px;
+  background-color: var(--wasd-white);
 }
 
 .break-left {
@@ -47,7 +45,7 @@
 }
 
 .break-logo-multi.special-effect {
-  height: 180px;
+  height: 155px;
 }
 
 .break-logo {
@@ -111,23 +109,22 @@
   align-items: center;
 }
 
+.break-right-label {
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
 .break-next-run-container {
   width: 100%;
-  height: 150px;
+  min-height: 130px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-}
-
-.break-next-run-label {
-  font-size: 30px;
-  width: 90%;
-  background-color: var(--wasd-white);
-  color: black;
-  text-shadow: none !important;
-  border-radius: 10px;
+  justify-content: space-evenly;
+  margin: 10px 0;
 }
 
 .break-next-run-game {
@@ -149,38 +146,43 @@
   padding: 0 10px;
 }
 
-.right-schedule {
+.break-multibox {
+  width: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.break-multibox-item {
+  position: absolute;
   height: 100%;
-  min-width: 650px;
+  width: 100%;
 }
 
-.right-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.incentives-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  flex-grow: 1;
+.break-later-on {
+  height: 100%;
   width: 100%;
 
-  font-family: 'DaggerSquareOblique';
-  color: var(--wasd-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  mask-image: linear-gradient(to bottom, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);
+}
+
+.break-incentives-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
 
   overflow: hidden;
 }
 
-.incentives-label {
-  font-size: 30px;
-  color: var(--wasd-white);
-}
-
-.incentives-list {
+.break-incentives-list {
   padding-top: 15px;
   overflow: hidden;
 
@@ -198,7 +200,7 @@
   -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);
 }
 
-.incentive-container {
+.break-incentive-container {
   width: 100%;
 
   display: flex;
@@ -208,16 +210,16 @@
   margin-bottom: 25px;
 }
 
-.incentive-game {
+.break-incentive-game {
   font-size: 26px;
 }
 
-.incentive-name {
+.break-incentive-name {
   font-size: 30px;
   margin-bottom: 3px;
 }
 
-.incentive-bar {
+.break-incentive-bar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -232,7 +234,7 @@
   padding: 5px 0;
 }
 
-.incentive-progress {
+.break-incentive-progress {
   position: absolute;
   top: 0;
   left: 0;
@@ -241,7 +243,7 @@
   width: 0%;
 }
 
-.incentive-amount {
+.break-incentive-amount {
   position: relative;
   font-size: 26px;
 }
