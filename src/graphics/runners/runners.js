@@ -15,7 +15,7 @@ export default class RunnersComponent {
         name: p.name,
         key: p.name,
         twitch: get(p, 'social.twitch'),
-        pronouns: get(vnode, `attrs.customData.p${i+1}Pronouns`),
+        pronouns: p.pronouns,
       });
     }));
   }

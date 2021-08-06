@@ -13,26 +13,6 @@
     "ignoreGamesWhileImporting": [ "Setup" ],
     "customData": [
       {
-        "name": "P1 Pronouns (optional)",
-        "key": "p1Pronouns",
-        "ignoreMarkdown": true
-      },
-      {
-        "name": "P2 Pronouns (optional)",
-        "key": "p2Pronouns",
-        "ignoreMarkdown": true
-      },
-      {
-        "name": "P3 Pronouns (optional)",
-        "key": "p3Pronouns",
-        "ignoreMarkdown": true
-      },
-      {
-        "name": "P4 Pronouns (optional)",
-        "key": "p4Pronouns",
-        "ignoreMarkdown": true
-      },
-      {
         "name": "Couch 1 Name (optional)",
         "key": "c1Name",
         "ignoreMarkdown": true
