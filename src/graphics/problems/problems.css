@@ -1,6 +1,4 @@
 .problems-text {
-  color: var(--wasd-white);
-  font-family: 'DaggerSquareOblique';
   font-size: 50px;
 
   position: absolute;
@@ -32,6 +30,7 @@
   height: 200px;
 
   background-image: url('../assets/wasd-keys-summer.svg');
+  opacity: var(--night-element-opacity);
 }
 
 .problems-image.wasd-shadow {
@@ -39,4 +38,5 @@
   height: 200px;
 
   background-image: url('../assets/wasd-keys-summer-shadow.svg');
+  opacity: var(--day-element-opacity);
 }
