@@ -25,18 +25,18 @@
   background-image: url('../assets/not_like_this.png');
 }
 
-.problems-image.wasd {
+.problems-image.wasd-light {
   width: 300px;
   height: 200px;
 
-  background-image: url('../assets/wasd-keys-summer.svg');
+  background-image: url('../assets/wasd-keys-summer-light.svg');
   opacity: var(--night-element-opacity);
 }
 
-.problems-image.wasd-shadow {
+.problems-image.wasd-dark {
   width: 300px;
   height: 200px;
 
-  background-image: url('../assets/wasd-keys-summer-shadow.svg');
+  background-image: url('../assets/wasd-keys-summer-dark.svg');
   opacity: var(--day-element-opacity);
 }

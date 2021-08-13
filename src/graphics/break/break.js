@@ -172,8 +172,8 @@ class BreakComponent {
         m('.break-container', [
           m('.break-left', [
             m('.break-logo-multi .wasd', [
-              m('.break-logo .wasd'),
-              m('.break-logo .wasd-shadow'),
+              m('.break-logo .wasd-light'),
+              m('.break-logo .wasd-dark'),
             ]),
             m('.break-logo-multi .special-effect', [
               m('.break-logo .special-effect-white'),

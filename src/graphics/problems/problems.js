@@ -14,8 +14,8 @@ class ProblemsImages {
   view() {
     return m('div', [
       m('div', [
-        m('.problems-image .wasd'),
-        m('.problems-image .wasd-shadow'),
+        m('.problems-image .wasd-light'),
+        m('.problems-image .wasd-dark'),
       ]),
       m('.problems-image .notlikethis'),
     ]);

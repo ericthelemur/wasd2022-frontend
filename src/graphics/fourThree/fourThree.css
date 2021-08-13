@@ -104,15 +104,15 @@
   transform: translate(-50%, -50%);
 }
 
-.logo.wasd {
+.logo.wasd-light {
   height: 80%;
-  background-image: url('../assets/wasd-keys-summer.svg');
+  background-image: url('../assets/wasd-keys-summer-light.svg');
   opacity: var(--night-element-opacity);
 }
 
-.logo.wasd-shadow {
+.logo.wasd-dark {
   height: 80%;
-  background-image: url('../assets/wasd-keys-summer-shadow.svg');
+  background-image: url('../assets/wasd-keys-summer-dark.svg');
   opacity: var(--day-element-opacity);
 }
 

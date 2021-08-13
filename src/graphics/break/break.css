@@ -60,13 +60,13 @@
   transform: translate(-50%, -50%);
 }
 
-.break-logo.wasd {
-  background-image: url('../assets/wasd-keys-summer.svg');
+.break-logo.wasd-light {
+  background-image: url('../assets/wasd-keys-summer-light.svg');
   opacity: var(--night-element-opacity);
 }
 
-.break-logo.wasd-shadow {
-  background-image: url('../assets/wasd-keys-summer-shadow.svg');
+.break-logo.wasd-dark {
+  background-image: url('../assets/wasd-keys-summer-dark.svg');
   opacity: var(--day-element-opacity);
 }
 

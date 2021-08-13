@@ -61,14 +61,14 @@
   transform: translate(-50%, -50%);
 }
 
-.logo.wasd {
-  background-image: url('../assets/wasd-keys-summer.svg');
+.logo.wasd-light {
+  background-image: url('../assets/wasd-keys-summer-light.svg');
   opacity: var(--night-element-opacity);
   width: 270px;
 }
 
-.logo.wasd-shadow {
-  background-image: url('../assets/wasd-keys-summer-shadow.svg');
+.logo.wasd-dark {
+  background-image: url('../assets/wasd-keys-summer-dark.svg');
   opacity: var(--day-element-opacity);
   width: 270px;
 }
