@@ -58,18 +58,19 @@ class CTA {
 export default class BarComponent {
   view(vnode) {
     return m('.bar', [
+      m('.bar-frost'),
       m('.bar-name', [
-        m('.bar-logo-multi.wasd', [
-          m('.bar-logo.wasd-summer-day #night-element'),
-          m('.bar-logo.wasd-summer-night #day-element'),
+        m('.bar-logo-wasd-multi', [
+          m('.bar-logo-wasd.summer-day'),
+          m('.bar-logo-wasd.summer-night'),
         ]),
         m('.bar-name-event', 'WASD 2021'),
       ]),
       m('.bar-v-space'),
       m('.bar-donos', [
-        m('.bar-logo-multi.special-effect', [
-          m('.bar-logo.special-effect-white #night-element'),
-          m('.bar-logo.special-effect-orange #day-element'),
+        m('.bar-logo-special-effect-multi', [
+          m('.bar-logo-special-effect.white'),
+          m('.bar-logo-special-effect.orange'),
         ]),
         m('.bar-dono-total', `£${vnode.attrs.total}`),
       ]),
