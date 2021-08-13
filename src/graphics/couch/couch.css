@@ -1,19 +1,16 @@
 .couch-container {
   width: 95%;
-  font-family: 'DaggerSquareOblique';
   letter-spacing: 2px;
-  color: var(--wasd-white);
   padding: 12px 0;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  border-bottom: 2px solid var(--wasd-white-muted);
+  border-bottom: 2px solid var(--spacer-color);
 }
 
 .couch-label {
-  color: var(--wasd-white);
   font-size: 20px;
   margin-bottom: 5px;
 }

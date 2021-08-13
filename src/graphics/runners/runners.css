@@ -5,14 +5,12 @@
   align-items: center;
   justify-content: center;
 
-  font-family: 'DaggerSquareOblique';
   letter-spacing: 2px;
-  color: var(--wasd-white);
 
   margin-top: 3px;
   padding: 5px 0;
 
-  border-bottom: 2px solid var(--wasd-white-muted);
+  border-bottom: 2px solid var(--spacer-color);
 }
 
 .runner-container {
