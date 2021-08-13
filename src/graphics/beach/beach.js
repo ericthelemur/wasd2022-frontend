@@ -56,12 +56,12 @@ export default class BeachBackground {
     const dayTextColorInvert = getComputedStyle(document.body).getPropertyValue('--wasd-white');
     const daySpacerColor = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue-muted');
 
-    gsap.to('html', { '--night-element-opacity': 0 }, duration);
-    gsap.to('html', { '--day-element-opacity': 1 }, duration);
+    gsap.to('html', { '--night-element-opacity': 0, duration: duration});
+    gsap.to('html', { '--day-element-opacity': 1, duration: duration });
 
-    gsap.to('html', { '--text-color': dayTextColor }, duration);
-    gsap.to('html', { '--text-color-invert': dayTextColorInvert }, duration);
-    gsap.to('html', { '--spacer-color': daySpacerColor }, duration);
+    gsap.to('html', { '--text-color': dayTextColor, duration: duration });
+    gsap.to('html', { '--text-color-invert': dayTextColorInvert, duration: duration });
+    gsap.to('html', { '--spacer-color': daySpacerColor, duration: duration });
   }
 
   setGlobalsNight(duration = 0) {
@@ -69,12 +69,12 @@ export default class BeachBackground {
     const nightTextColorInvert = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue');
     const nightSpacerColor = getComputedStyle(document.body).getPropertyValue('--wasd-white-muted');
 
-    gsap.to('html', { '--night-element-opacity': 1 }, duration);
-    gsap.to('html', { '--day-element-opacity': 0 }, duration);
+    gsap.to('html', { '--night-element-opacity': 1, duration: duration });
+    gsap.to('html', { '--day-element-opacity': 0, duration: duration });
 
-    gsap.to('html', { '--text-color': nightTextColor }, duration);
-    gsap.to('html', { '--text-color-invert': nightTextColorInvert }, duration);
-    gsap.to('html', { '--spacer-color': nightSpacerColor }, duration);
+    gsap.to('html', { '--text-color': nightTextColor, duration: duration });
+    gsap.to('html', { '--text-color-invert': nightTextColorInvert, duration: duration });
+    gsap.to('html', { '--spacer-color': nightSpacerColor, duration: duration });
   }
 
   resetAjustments() {
