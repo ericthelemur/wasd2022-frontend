@@ -107,10 +107,10 @@ export default class BeachBackground {
 
     tl.fromTo('.beach.night-sky',        { filter: 'brightness(1)' }, { filter: 'brightness(1.9)', duration: 3 });
 
-    this.setGlobalsDay(10);
-
     tl.to('.beach.day-foreground',       { opacity: 1, duration: 10 }, '<');
     tl.to('.beach.day-sky',              { opacity: 1, duration: 6 }, '<+1');
+
+    this.setGlobalsDay(10);
 
     this.resetAjustments();
 
