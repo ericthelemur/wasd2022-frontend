@@ -20,6 +20,7 @@ const replicants = {
   currentVideo: NodeCG.Replicant('currentVideo', 'wasd'),
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),
   challenges: NodeCG.Replicant('challenges', 'nodecg-tiltify'),
+  polls: NodeCG.Replicant('donationpolls', 'nodecg-tiltify'),
 };
 
 class Incentive {
@@ -45,11 +46,7 @@ class Incentive {
 
     const width = Math.min(((current / max) * 100), 100);
 
-    gsap.to(bar, {
-      width: `${width}%`,
-      ease: 'expo.out',
-      duration: 3,
-    });
+    gsap.to(bar, { width: `${width}%`, ease: 'expo.out', duration: 3 });
   }
 }
 
@@ -85,12 +82,43 @@ class BreakMultiBox {
         m(Incentives, { incentives: vnode.attrs.incentives }),
       ]),
       m('.break-multibox-item', [
-        m('.break-h-space'),
-        m('.break-right-label', 'THIRD BOX'),
-        m('.break-h-space'),
-        m('div', 'SOMETHING ABOUT DONATING FOR NIGHT VS DAY'),
+        m('.break-day-night-container', [
+          m('.break-h-space'),
+          m('.break-right-label', 'Donate to change the WASD stream theme!'),
+          m('.break-h-space'),
+          m('.break-day-night-row', [
+            m('.break-day-night-label', 'Day Mode'),
+            m('.break-day-night-label', 'Night Mode'),
+          ]),
+          m('.break-day-night-row', [
+            m('.break-day-night-image .wasd-day'),
+            m('.div', 'vs.'),
+            m('.break-day-night-image .wasd-night'),
+          ]),
+          m('.break-day-night-row', [
+            m('.break-day-night-amount', `£${vnode.attrs.dayAmount}`),
+            m('.break-day-night-amount', `£${vnode.attrs.nightAmount}`),
+          ]),
+          m('.break-day-night-row', [
+            m('.div', this.resultDayNight(vnode.attrs.dayAmount, vnode.attrs.nightAmount)),
+          ]),
+        ]),
       ])
     ]);
+  }
+
+  resultDayNight(dayAmount, nightAmount) {
+    if (dayAmount === nightAmount) {
+      return 'Draw!';
+    }
+
+    if (dayAmount > nightAmount) {
+      return 'Day Mode is Winning!';
+    }
+
+    if (dayAmount < nightAmount) {
+      return 'Night Mode is Winning!';
+    }
   }
 
   oncreate(vnode) {
@@ -98,10 +126,12 @@ class BreakMultiBox {
 
     const tl = gsap.timeline({ repeat: -1, paused: true });
 
+    const hold = 20;
+
     boxes.forEach((box) => {
       gsap.set(box, { opacity: 0 });
       tl.to(box, { opacity: 1 });
-      tl.to({}, 2, {});
+      tl.to({}, hold, {});
       tl.to(box, { opacity: 0 });
       tl
     });
@@ -165,7 +195,12 @@ class BreakComponent {
             ((vnode.attrs.nextRuns.length === 0)
               ? m('.break-next-run-game', 'NO RUNS!')
               : m(Run, { run: vnode.attrs.nextRuns[0] })),
-            m(BreakMultiBox, { nextRuns: vnode.attrs.nextRuns, incentives: vnode.attrs.incentives }),
+            m(BreakMultiBox, {
+              nextRuns: vnode.attrs.nextRuns,
+              incentives: vnode.attrs.incentives,
+              dayAmount: vnode.attrs.dayAmount,
+              nightAmount: vnode.attrs.nightAmount,
+            }),
           ]),
         ]),
       ]),
@@ -186,6 +221,8 @@ NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
         currentVideo: replicants.currentVideo.value,
         nextRuns: nextRuns(replicants.run.value, replicants.runArray.value),
         incentives: replicants.challenges.value,
+        dayAmount: Math.floor(get(replicants.polls,'value[1].options[0].totalAmountRaised', 0)),
+        nightAmount: Math.floor(get(replicants.polls,'value[1].options[1].totalAmountRaised', 0)),
       });
     }
   });

@@ -167,8 +167,11 @@
   align-items: center;
   overflow: hidden;
 
+  /*
+   * Maybe don't have fade?
   mask-image: linear-gradient(to bottom, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);
+  */
 }
 
 .break-incentives-container {
@@ -194,14 +197,15 @@
   align-items: center;
 
   /*
+   * Maybe don't have fade?
   background-image: linear-gradient(to bottom, black 90%, transparent);
-  */
   mask-image: linear-gradient(to bottom, black 90%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);
+  */
 }
 
 .break-incentive-container {
-  width: 100%;
+  width: 90%;
 
   display: flex;
   flex-direction: column;
@@ -239,11 +243,57 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--wasd-purple);
+  background-color: var(--wasd-navy);
   width: 0%;
 }
 
 .break-incentive-amount {
   position: relative;
   font-size: 26px;
+}
+
+.break-day-night-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.break-day-night-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  font-size: 42px;
+  flex-grow: 1;
+}
+
+.break-day-night-label {
+  margin: 0 150px;
+}
+
+.break-day-night-amount {
+  margin: 0 240px;
+}
+
+.break-day-night-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 300px;
+  height: 300px;
+  margin: 0 75px;
+}
+
+.break-day-night-image.wasd-day {
+  background-image: url('../assets/wasd-avatar-summer-2021-day.png');
+}
+
+.break-day-night-image.wasd-night {
+  background-image: url('../assets/wasd-avatar-summer-2021-night.png');
 }
