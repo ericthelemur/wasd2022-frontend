@@ -89,9 +89,15 @@ class BreakMultiBox {
             m('.break-day-night-label', 'Night Mode'),
           ]),
           m('.break-day-night-row', [
-            m('.break-day-night-image .wasd-day'),
+            m('.break-day-night-multi-image', [
+              m('.break-day-night-image .wasd-day-lightmode'),
+              m('.break-day-night-image .wasd-day-darkmode'),
+            ]),
             m('.div', 'vs.'),
-            m('.break-day-night-image .wasd-night'),
+            m('.break-day-night-multi-image', [
+              m('.break-day-night-image .wasd-night-lightmode'),
+              m('.break-day-night-image .wasd-night-darkmode'),
+            ]),
           ]),
           m('.break-day-night-row', [
             m('.break-day-night-amount', `£${vnode.attrs.dayAmount}`),

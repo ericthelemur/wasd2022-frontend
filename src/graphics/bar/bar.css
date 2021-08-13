@@ -55,12 +55,12 @@
 }
 
 .bar-logo-wasd.summer-day {
-  background-image: url('../assets/wasd-avatar-summer-2021-day.png');
+  background-image: url('../assets/wasd-w-day-lightmode.png');
   opacity: var(--night-element-opacity);
 }
 
 .bar-logo-wasd.summer-night {
-  background-image: url('../assets/wasd-avatar-summer-2021-night.png');
+  background-image: url('../assets/wasd-w-night-darkmode.png');
   opacity: var(--day-element-opacity);
 }
 
