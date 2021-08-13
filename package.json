@@ -49,12 +49,6 @@
         "width": 2,
         "name": "backgroundMode",
         "title": "Background Mode"
-      },
-      {
-        "file": "videoPlayer/index.html",
-        "width": 3,
-        "name": "videoPlayer",
-        "title": "Video Player"
       }
     ],
     "graphics": [
@@ -72,6 +66,12 @@
       },
       {
         "file": "break/index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "video/index.html",
         "width": 1920,
         "height": 1080,
         "singleInstance": false
