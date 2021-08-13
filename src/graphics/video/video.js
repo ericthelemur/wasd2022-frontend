@@ -25,12 +25,11 @@ class VideoScreenComponent {
       m('.graphic .overlay', [
         m('.video-component-container', [
           m('.video-special-effect-multi', [
-            m('.video-logo.special-effect-orange #day-element'),
-            m('.video-logo.special-effect-white #night-element'),
+            m('.video-logo.special-effect-orange'),
+            m('.video-logo.special-effect-white'),
           ]),
           m('.video-greenscreen'),
           m('.video-up-next-container', [
-            m('.video-v-space'),
             m('.video-up-next-label', 'Coming Up Next'),
             m('.video-v-space'),
             m('.video-up-next-game', run.game),
@@ -40,7 +39,6 @@ class VideoScreenComponent {
               get(run, 'teams[0].players', []).map(p => p.name).join(', '),
               run.estimate,
             ].join('/')),
-            m('.video-v-space'),
           ]),
         ]),
       ]),
