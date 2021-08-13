@@ -26,7 +26,10 @@ class RunnerRowName {
     const { name, pronouns } = vnode.attrs;
 
     return m('.runner-row .name', [
-      m('.runner-icon .runner'),
+      m('.runner-icon-multi', [
+        m('.runner-icon .runner-light'),
+        m('.runner-icon .runner-dark'),
+      ]),
       m('.runner-label', name),
       m('.runner-pronouns', pronouns || null),
     ]);
@@ -42,7 +45,10 @@ class RunnerRowTwitch {
     }
 
     return m('.runner-row .twitch', [
-      m('.runner-icon .twitch'),
+      m('.runner-icon-multi', [
+        m('.runner-icon .twitch-light'),
+        m('.runner-icon .twitch-dark'),
+      ]),
       m('.runner-label', twitch),
       m('.runner-pronouns'),
     ]);

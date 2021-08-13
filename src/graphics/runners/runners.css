@@ -41,18 +41,41 @@
   position: absolute;
 }
 
+.runner-icon-multi {
+  position: relative;
+  height: 28px;
+  width: 28px;
+}
+
 .runner-icon {
-  height: 28px; width: 28px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.runner-icon.runner {
-  background-image: url('../assets/running-solid.svg');
+.runner-icon.runner-light {
+  background-image: url('../assets/running-solid-light.svg');
+  opacity: var(--night-element-opacity);
 }
 
-.runner-icon.twitch {
-  background-image: url('../assets/twitch-brands.svg');
+.runner-icon.runner-dark {
+  background-image: url('../assets/running-solid-dark.svg');
+  opacity: var(--day-element-opacity);
+}
+
+.runner-icon.twitch-light {
+  background-image: url('../assets/twitch-brands-light.svg');
+  opacity: var(--night-element-opacity);
+}
+
+.runner-icon.twitch-dark {
+  background-image: url('../assets/twitch-brands-dark.svg');
+  opacity: var(--day-element-opacity);
 }
 
 .runner-label {

@@ -13,7 +13,10 @@ class CouchRow {
     }
 
     return m('.couch-row', [
-      m('.couch-mic'),
+      m('.couch-mic-icon-multi', [
+        m('.couch-mic-icon.light'),
+        m('.couch-mic-icon.dark'),
+      ]),
       m('.couch-person', name),
       m('.couch-pronouns', pronouns),
     ]);

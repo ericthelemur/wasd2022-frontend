@@ -24,11 +24,30 @@
   width: 100%;
 }
 
-.couch-mic {
+.couch-mic-icon-multi {
   height: 28px; width: 28px;
+  position: relative;
+}
+
+.couch-mic-icon {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../assets/microphone-alt-solid.svg');
+}
+
+.couch-mic-icon.light {
+  background-image: url('../assets/microphone-alt-solid-light.svg');
+  opacity: var(--night-element-opacity);
+}
+
+.couch-mic-icon.dark {
+  background-image: url('../assets/microphone-alt-solid-dark.svg');
+  opacity: var(--day-element-opacity);
 }
 
 .couch-person {
