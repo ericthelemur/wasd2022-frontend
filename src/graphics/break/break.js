@@ -7,7 +7,6 @@ import './break.css';
 
 import BeachBackground from '../beach/beach.js';
 import CurrentSongComponent from '../currentSong/currentSong.js';
-import VideoPlayer from '../videoPlayer/videoPlayer.js';
 import BarComponent from '../bar/bar.js';
 import { nextRuns } from '../nextRuns/nextRuns.js';
 
@@ -17,7 +16,6 @@ const replicants = {
   currentSong: NodeCG.Replicant('currentSong', 'ncg-spotify'),
   countdown: NodeCG.Replicant('countdown', 'wasd'),
   backgroundMode: NodeCG.Replicant('backgroundMode', 'wasd'),
-  currentVideo: NodeCG.Replicant('currentVideo', 'wasd'),
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),
   challenges: NodeCG.Replicant('challenges', 'nodecg-tiltify'),
   polls: NodeCG.Replicant('donationpolls', 'nodecg-tiltify'),
@@ -209,7 +207,6 @@ class BreakComponent {
   }
 }
 
-
 NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   m.mount(document.body, {
     view: () => {
@@ -218,7 +215,6 @@ NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
         total: Math.floor(replicants.total.value),
         countdown: replicants.countdown.value,
         backgroundModeRep: replicants.backgroundMode,
-        currentVideo: replicants.currentVideo.value,
         nextRuns: nextRuns(replicants.run.value, replicants.runArray.value),
         incentives: replicants.challenges.value,
         dayAmount: Math.floor(get(replicants.polls,'value[1].options[0].totalAmountRaised', 0)),
@@ -228,6 +224,3 @@ NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   });
 });
 
-Object.values(replicants).forEach((rep) => {
-  rep.on('change', () => { m.redraw(); });
-});
