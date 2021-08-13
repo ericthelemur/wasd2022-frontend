@@ -6,7 +6,7 @@
   height: 860px;
 
   border-radius: 0px 0px 0px 5px;
-  border: 5px solid var(--wasd-white);
+  border: 5px solid var(--spacer-color);
   border-top: none;
   border-right: none;
 
@@ -28,7 +28,7 @@
 .cam {
   width: 100%;
   min-height: 360px;
-  border-bottom: 5px solid var(--wasd-white);
+  border-bottom: 5px solid var(--spacer-color);
   background-color: var(--chroma-green);
 }
 
@@ -63,28 +63,30 @@
 
 .logo.wasd {
   background-image: url('../assets/wasd-keys-summer.svg');
+  opacity: var(--night-element-opacity);
   width: 270px;
 }
 
 .logo.wasd-shadow {
   background-image: url('../assets/wasd-keys-summer-shadow.svg');
+  opacity: var(--day-element-opacity);
   width: 270px;
 }
 
 .logo.special-effect-white {
   background-image: url('../assets/specialeffect-proud-white.png');
+  opacity: var(--night-element-opacity);
   width: 350px;
 }
 
 .logo.special-effect-orange {
   background-image: url('../assets/specialeffect-proud-orange.png');
+  opacity: var(--day-element-opacity);
   width: 350px;
 }
 
 .bottom {
-  font-family: 'DaggerSquareOblique';
   letter-spacing: 1px;
-  color: var(--wasd-white);
 
   position: absolute;
   bottom: 0px; right: 0px;
@@ -105,8 +107,8 @@
 
 .run-details {
   flex-grow: 1; /* grow to available size in parent */
-  border-left: 2px solid var(--wasd-white-muted);
-  border-right: 2px solid var(--wasd-white-muted);
+  border-left: 2px solid var(--spacer-color);
+  border-right: 2px solid var(--spacer-color);
   margin-right: 10px;
 }
 
