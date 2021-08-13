@@ -149,6 +149,7 @@ class BreakMultiBox {
 class Run {
   view(vnode) {
     return m('.break-next-run-container', [
+      m('.break-next-run-bg'),
       m('.break-next-run-game', vnode.attrs.run.game),
       m('.break-next-run-details', [
         m('span', vnode.attrs.run.category),
