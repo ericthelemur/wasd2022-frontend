@@ -58,24 +58,28 @@ class CTA {
 export default class BarComponent {
   view(vnode) {
     return m('.bar', [
-      /*
-      m('.name', [
-        m('.bar-logo.wasd-icon'),
-        m('span', 'WASD 2021'),
+      m('.bar-name', [
+        m('.bar-logo-multi.wasd', [
+          m('.bar-logo.wasd-summer-day #night-element'),
+          m('.bar-logo.wasd-summer-night #day-element'),
+        ]),
+        m('.bar-name-event', 'WASD Summer 2021'),
       ]),
-      m('.v-space'),
-      */
-      m('.donos', [
-        m('.bar-logo.special-effect'),
-        m('span', `£${vnode.attrs.total}`),
+      m('.bar-v-space'),
+      m('.bar-donos', [
+        m('.bar-logo-multi.special-effect', [
+          m('.bar-logo.special-effect-white #night-element'),
+          m('.bar-logo.special-effect-orange #day-element'),
+        ]),
+        m('.bar-dono-total', `£${vnode.attrs.total}`),
       ]),
       m('.bar-v-space'),
       m(CTA, {
         hold: 30,
         ctas: [
-        'This is Warwick\'s Awesome Speedruns & Demos SUMMER 2021',
+        'Warwick\'s Awesome Speedruns & Demos Summer 2021',
         'See the full schedule at warwickspeed.run/schedule',
-        'WASD SUMMER 2021 is raising money for SpecialEffect',
+        'WASD Summer 2021 is raising money for SpecialEffect',
         'Donate now at warwickspeed.run/donate',
         ]
       }),
