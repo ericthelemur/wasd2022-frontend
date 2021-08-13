@@ -16,6 +16,29 @@ const replicants = {
   total: NodeCG.Replicant('total', 'nodecg-tiltify'),
 };
 
+class UpNext {
+  view(vnode) {
+    let run;
+    if (vnode.attrs.nextRuns.length === 0) {
+      run = { game: 'No More Runs!' };
+    } else {
+      run = vnode.attrs.nextRuns[0];
+    }
+
+    return m('.video-up-next-container', [
+      m('.video-up-next-label', 'Coming Up Next'),
+      m('.video-v-space'),
+      m('.video-up-next-game', run.game),
+      m('.video-up-next-details', [
+        get(run, 'category', ''),
+        get(run, 'system', ''),
+        get(run, 'teams[0].players', []).map(p => p.name).join(', '),
+        get(run, 'estimate'),
+      ].join('/')),
+    ]);
+  }
+}
+
 class VideoScreenComponent {
   view(vnode) {
     const run = vnode.attrs.nextRuns[0];
@@ -29,17 +52,7 @@ class VideoScreenComponent {
             m('.video-logo.special-effect-white'),
           ]),
           m('.video-greenscreen'),
-          m('.video-up-next-container', [
-            m('.video-up-next-label', 'Coming Up Next'),
-            m('.video-v-space'),
-            m('.video-up-next-game', run.game),
-            m('.video-up-next-details', [
-              run.category,
-              run.system,
-              get(run, 'teams[0].players', []).map(p => p.name).join(', '),
-              run.estimate,
-            ].join('/')),
-          ]),
+          m(UpNext, { nextRuns: vnode.attrs.nextRuns }),
         ]),
       ]),
       m(BarComponent, { total: vnode.attrs.total }),
