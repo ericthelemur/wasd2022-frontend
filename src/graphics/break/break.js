@@ -101,7 +101,7 @@ class BreakMultiBox {
             m('.div', this.resultDayNight(vnode.attrs.dayAmount, vnode.attrs.nightAmount)),
           ]),
         ]),
-      ])
+      ]),
     ]);
   }
 
@@ -171,12 +171,12 @@ class BreakComponent {
         m('.break-container', [
           m('.break-left', [
             m('.break-logo-multi .wasd', [
-              m('.break-logo wasd #night-element'),
-              m('.break-logo wasd-shadow #day-element'),
+              m('.break-logo .wasd'),
+              m('.break-logo .wasd-shadow'),
             ]),
             m('.break-logo-multi .special-effect', [
-              m('.break-logo special-effect-white #night-element'),
-              m('.break-logo special-effect-orange #day-element'),
+              m('.break-logo .special-effect-white'),
+              m('.break-logo .special-effect-orange'),
             ]),
             m('.break-h-space'),
             m('.countdown-container', [
