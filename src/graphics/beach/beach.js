@@ -3,9 +3,6 @@ import gsap from 'gsap';
 
 import './beach.css';
 
-const textShadowDay = '0px 0px 3px rgb(0, 0, 0, 1)';
-const textShadowNight = '0px 0px 3px rgb(0, 0, 0, 0)';
-
 export default class BeachBackground {
   view(vnode) {
     return m('#beach-background', [
@@ -54,6 +51,32 @@ export default class BeachBackground {
     });
   }
 
+  setGlobalsDay(duration = 0) {
+    const dayTextColor = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue');
+    const dayTextColorInvert = getComputedStyle(document.body).getPropertyValue('--wasd-white');
+    const daySpacerColor = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue-muted');
+
+    gsap.to('html', { '--night-element-opacity': 0 }, duration);
+    gsap.to('html', { '--day-element-opacity': 1 }, duration);
+
+    gsap.to('html', { '--text-color': dayTextColor }, duration);
+    gsap.to('html', { '--text-color-invert': dayTextColorInvert }, duration);
+    gsap.to('html', { '--spacer-color': daySpacerColor }, duration);
+  }
+
+  setGlobalsNight(duration = 0) {
+    const nightTextColor = getComputedStyle(document.body).getPropertyValue('--wasd-white');
+    const nightTextColorInvert = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue');
+    const nightSpacerColor = getComputedStyle(document.body).getPropertyValue('--wasd-white-muted');
+
+    gsap.to('html', { '--night-element-opacity': 1 }, duration);
+    gsap.to('html', { '--day-element-opacity': 0 }, duration);
+
+    gsap.to('html', { '--text-color': nightTextColor }, duration);
+    gsap.to('html', { '--text-color-invert': nightTextColorInvert }, duration);
+    gsap.to('html', { '--spacer-color': nightSpacerColor }, duration);
+  }
+
   resetAjustments() {
     gsap.set('.beach.day-foreground',   { filter: 'brightness(1)' });
     gsap.set('.beach.day-sky',          { filter: 'brightness(1)' });
@@ -66,9 +89,7 @@ export default class BeachBackground {
     gsap.set('#lighthouse',           { opacity: 0 });
     gsap.set('.beach.day-foreground', { opacity: 1 });
     gsap.set('.beach.day-sky',        { opacity: 1 });
-    gsap.set(document.body,           { textShadow: textShadowDay });
-    gsap.set('#night-element',        { opacity: 0 });
-    gsap.set('#day-element',          { opacity: 1 });
+    this.setGlobalsDay();
   }
 
   setNight() {
@@ -76,9 +97,7 @@ export default class BeachBackground {
     gsap.set('#lighthouse',           { opacity: 1 });
     gsap.set('.beach.day-foreground', { opacity: 0 });
     gsap.set('.beach.day-sky',        { opacity: 0 });
-    gsap.set(document.body,           { textShadow: textShadowNight });
-    gsap.set('#night-element',        { opacity: 1 });
-    gsap.set('#day-element',          { opacity: 0 });
+    this.setGlobalsNight();
   }
 
   transitionDay() {
@@ -88,9 +107,7 @@ export default class BeachBackground {
 
     tl.fromTo('.beach.night-sky',        { filter: 'brightness(1)' }, { filter: 'brightness(1.9)', duration: 3 });
 
-    tl.to(document.body,    { textShadow: textShadowDay, duration: 5 });
-    tl.to('#night-element', { opacity: 0, duration: 5 }, '<');
-    tl.to('#day-element',   { opacity: 1, duration: 5 }, '<');
+    this.setGlobalsDay(10);
 
     tl.to('.beach.day-foreground',       { opacity: 1, duration: 10 }, '<');
     tl.to('.beach.day-sky',              { opacity: 1, duration: 6 }, '<+1');
@@ -108,9 +125,7 @@ export default class BeachBackground {
     tl.to('.beach.day-foreground',     { opacity: 0, duration: 6 }, '>-1');
     tl.to('.beach.day-sky',            { opacity: 0, duration: 6 }, '<');
 
-    tl.to(document.body,    { textShadow: textShadowNight, duration: 5 }, '<');
-    tl.to('#night-element', { opacity: 1, duration: 5 }, '<');
-    tl.to('#day-element',   { opacity: 0, duration: 5 }, '<');
+    this.setGlobalsNight(10);
 
     // show lighthouse anim
     tl.to('#lighthouse',               { opacity: 1, duration: 2 });

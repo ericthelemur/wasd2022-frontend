@@ -17,8 +17,17 @@
   --wasd-pink: #FF71E6;
   --wasd-light-blue: #57EDFF;
   --wasd-navy: #1D2C66;
+  --wasd-dark-blue: #21344F;
+  --wasd-dark-blue-muted: #21344FE6;
+
 
   --chroma-green: #00FF00;
+
+  --text-color: var(--wasd-white);
+  --text-color-invert: var(--wasd-dark-blue);
+  --spacer-color: var(--wasd-white);
+  --day-element-opacity: 0;
+  --night-element-opacity: 1;
 }
 
 * {
@@ -36,6 +45,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  color: var(--text-color);
+  font-family: 'DaggerSquareOblique';
 }
 
 .graphic {
