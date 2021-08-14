@@ -231,3 +231,6 @@ NodeCG.waitForReplicants(...Object.values(replicants)).then(() => {
   });
 });
 
+Object.values(replicants).forEach((rep) => {
+  rep.on('change', () => { m.redraw(); });
+});
