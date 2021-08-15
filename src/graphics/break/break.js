@@ -54,7 +54,9 @@ class Incentives {
       m('.break-h-space'),
       m('.break-right-label', 'Donation Incentives'),
       m('.break-h-space'),
-      m('.break-incentives-list', ...vnode.attrs.incentives.filter(i => i.active).map((i) => {
+      m('.break-incentives-list', ...vnode.attrs.incentives.filter(i => i.active)
+                                                           .sort((left, right) => left.endsAt < right.endsAt) // tmp
+                                                           .map((i) => {
         return m(Incentive, { incentive: i, key: i.id });
       })),
     ]);
