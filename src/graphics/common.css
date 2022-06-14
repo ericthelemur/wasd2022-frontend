@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'DaggerSquareOblique';
-  src: url('./assets/daggersquare-oblique.otf') format('opentype');
+  font-family: 'Montserrat';
+  src: url('./assets/Montserrat-Bold.ttf');
 }
 
 :root {
@@ -47,7 +47,7 @@ body {
   height: 100vh;
 
   color: var(--text-color);
-  font-family: 'DaggerSquareOblique';
+  font-family: 'Montserrat';
 }
 
 .graphic {
