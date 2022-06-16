@@ -45,9 +45,9 @@ export default class BeachBackground {
   }
 
   setGlobalsDay(duration = 0) {
-    const dayTextColor = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue');
+    const dayTextColor = getComputedStyle(document.body).getPropertyValue('--wasd-dark');
     const dayTextColorInvert = getComputedStyle(document.body).getPropertyValue('--wasd-white');
-    const daySpacerColor = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue-muted');
+    const daySpacerColor = getComputedStyle(document.body).getPropertyValue('--wasd-dark-muted');
 
     gsap.to('html', { '--night-element-opacity': 0, duration: duration});
     gsap.to('html', { '--day-element-opacity': 1, duration: duration });
@@ -59,7 +59,7 @@ export default class BeachBackground {
 
   setGlobalsNight(duration = 0) {
     const nightTextColor = getComputedStyle(document.body).getPropertyValue('--wasd-white');
-    const nightTextColorInvert = getComputedStyle(document.body).getPropertyValue('--wasd-dark-blue');
+    const nightTextColorInvert = getComputedStyle(document.body).getPropertyValue('--wasd-dark');
     const nightSpacerColor = getComputedStyle(document.body).getPropertyValue('--wasd-white-muted');
 
     gsap.to('html', { '--night-element-opacity': 1, duration: duration });
@@ -91,14 +91,14 @@ export default class BeachBackground {
 
   transitionDay() {
     const tl = gsap.timeline({ paused: true });
-    tl.set('#lighthouse',                { opacity: 0 });
+    // tl.set('#lighthouse',                { opacity: 0 });
 
     tl.fromTo('.beach.night-sky',        { filter: 'brightness(1)' }, { filter: 'brightness(1.9)', duration: 3 });
 
-    tl.to('.beach.day-foreground',       { opacity: 1, duration: 10 }, '<');
-    tl.to('.beach.day-sky',              { opacity: 1, duration: 6 }, '<+1');
+    tl.to('.beach.day-foreground',       { opacity: 1, duration: 5 }, '<');
+    tl.to('.beach.day-sky',              { opacity: 1, duration: 3 }, '<+1');
 
-    this.setGlobalsDay(10);
+    this.setGlobalsDay(3);
 
     this.resetAjustments();
 
@@ -110,10 +110,10 @@ export default class BeachBackground {
 
     tl.fromTo('.beach.day-foreground', { filter: 'brightness(1)' }, { filter: 'brightness(0.2)', duration: 3 });
     tl.fromTo('.beach.day-sky',        { filter: 'brightness(1)' }, { filter: 'brightness(0.2)', duration: 3 }, '<');
-    tl.to('.beach.day-foreground',     { opacity: 0, duration: 6 }, '>-1');
-    tl.to('.beach.day-sky',            { opacity: 0, duration: 6 }, '<');
+    tl.to('.beach.day-foreground',     { opacity: 0, duration: 5 }, '>-1');
+    tl.to('.beach.day-sky',            { opacity: 0, duration: 3 }, '<');
 
-    this.setGlobalsNight(10);
+    this.setGlobalsNight(3);
 
     this.resetAjustments();
 
