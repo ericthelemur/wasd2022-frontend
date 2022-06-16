@@ -6,6 +6,8 @@ This is a [NodeCG](https://nodecg.dev) bundle used for broadcast graphics for
 the videogame speedrunning marathon event [Warwick's Awesome Speedruns & Demos
 2021 Summer](https://warwickspeed.run).
 
+It also uses [nodecg-cli](https://www.npmjs.com/package/nodecg-cli) to setup the bundles.
+
 ### dependant NodeCG bundles
 
 * [`nodecg-speedcontrol`](https://github.com/speedcontrol/nodecg-speedcontrol)
@@ -46,51 +48,32 @@ TBD
 ### clone and install NodeCG and bundles
 
 ```shell
-# install nodecg
-$ git clone --depth 1 --branch v1.8.1 git@github.com:nodecg/nodecg.git
-$ cd nodecg
-$ npm ci
+# Create repo
+nodecg setup
 
-# install bundles
-$ cd bundles
+# Install bundles
+nodecg install speedcontrol/nodecg-speedcontrol
+nodecg install daniellockard/nodecg-tiltify
+nodecg install EwanLyon/ncg-spotify
 
-# nodecg-speedcontrol
-$ git clone --depth 1 --branch v2.3.0 git@github.com:speedcontrol/nodecg-speedcontrol.git
-$ cd nodecg-speedcontrol
-$ npm ci
-$ cd ..
-
-# nodecg-tiltify
-$ git clone --depth 1 git@github.com:daniellockard/nodecg-tiltify.git
-$ cd nodecg-tiltify
-$ npm ci
-$ cd ..
-
-# ncg-spotify
-$ git clone --depth 1 git@github.com:EwanLyon/ncg-spotify.git
-$ cd ncg-spotify
-$ npm ci
-$ cd ..
-
-# wasd2021
-$ git clone --depth 1 git@github.com:jai-x/wasd2021-summer.git
-$ cd wasd2021
-$ npm ci
+# Install this bundle 
+git clone https://github.com/ericthelemur/wasd2022-frontend
 ```
 
 ### build
 
 ```shell
-$ cd nodecg/bundles/wasd2021-summer
-$ npm run build
+cd nodecg/bundles/wasd2022-frontend
+npm ci
+npm run build
 ```
 
 ### configuration
 
-Copy the JSON config files to `/nodecg/cfg`.
+Copy the JSON config files to `/nodecg/cfg`. In `wasd2022-frontend`:
 
 ```shell
-$ cp cfg/* ../../cfg
+cp cfg/* ../../cfg
 ```
 
 Edit the JSON files in `/nodecg/cfg` to populate them with credentials.
@@ -98,9 +81,10 @@ See the README files of the dependent NodeCG bundles for how to obtain these
 credentials.
 
 ### running
+In `wasd2022-frontend`:
 
 ```shell
-$ npm run start
+npm run start
 ```
 
 ## license
