@@ -7,12 +7,7 @@ export default class BeachBackground {
   view(vnode) {
     return m('#beach-background', [
       m('.beach.night-sky'),
-      m('.beach.night-stars'),
       m('.beach.night-foreground'),
-      m('#lighthouse', [
-        m('.beach.night-lighthouse-inner'),
-        m('.beach.night-lighthouse-outer'),
-      ]),
       m('.beach.day-sky'),
       m('.beach.day-foreground'),
     ]);
@@ -20,8 +15,6 @@ export default class BeachBackground {
 
   oncreate(vnode) {
     const rep = vnode.attrs.backgroundModeRep;
-
-    this.setuplightHouseAnimation();
 
     rep.on('change', (newMode, oldMode) => {
       // hard set to state on init when no old more
@@ -85,16 +78,12 @@ export default class BeachBackground {
   }
 
   setDay() {
-    gsap.set('.beach.night-stars',    { opacity: 0 });
-    gsap.set('#lighthouse',           { opacity: 0 });
     gsap.set('.beach.day-foreground', { opacity: 1 });
     gsap.set('.beach.day-sky',        { opacity: 1 });
     this.setGlobalsDay();
   }
 
   setNight() {
-    gsap.set('.beach.night-stars',    { opacity: 1 });
-    gsap.set('#lighthouse',           { opacity: 1 });
     gsap.set('.beach.day-foreground', { opacity: 0 });
     gsap.set('.beach.day-sky',        { opacity: 0 });
     this.setGlobalsNight();
@@ -102,7 +91,6 @@ export default class BeachBackground {
 
   transitionDay() {
     const tl = gsap.timeline({ paused: true });
-    tl.to('.beach.night-stars',          { opacity: 0, duration: 3 });
     tl.set('#lighthouse',                { opacity: 0 });
 
     tl.fromTo('.beach.night-sky',        { filter: 'brightness(1)' }, { filter: 'brightness(1.9)', duration: 3 });
@@ -127,35 +115,8 @@ export default class BeachBackground {
 
     this.setGlobalsNight(10);
 
-    // show lighthouse anim
-    tl.to('#lighthouse',               { opacity: 1, duration: 2 });
-    tl.to('.beach.night-stars', { opacity: 1, duration: 5 });
-
     this.resetAjustments();
 
-    tl.play();
-  }
-
-  setuplightHouseAnimation() {
-    const tl = gsap.timeline({ paused: true, repeat: -1 });
-    tl.fromTo('.beach.night-lighthouse-outer', { opacity: 1 }, {
-      opacity: 0,
-      duration: 2,
-      ease: 'circ.In',
-    });
-    tl.to('.beach.night-lighthouse-inner', {
-      opacity: 1,
-      duration: 0.25,
-      ease: 'circ.In',
-      repeat: 1,
-      yoyo: true,
-      yoyoEase: true,
-    });
-    tl.fromTo('.beach.night-lighthouse-outer', { opacity: 0 }, {
-      opacity: 1,
-      duration: 2,
-      ease: 'circ.In',
-    });
     tl.play();
   }
 }
