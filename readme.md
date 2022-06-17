@@ -44,6 +44,7 @@ TBD
 TBD
 
 ## installation
+Tested with node 16.13.1 and npm 8.1.2
 
 ### clone and install NodeCG and bundles
 
