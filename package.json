@@ -71,6 +71,12 @@
         "singleInstance": false
       },
       {
+        "file": "controllerCam/index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
         "file": "break/index.html",
         "width": 1920,
         "height": 1080,
