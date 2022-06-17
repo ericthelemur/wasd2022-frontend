@@ -33,14 +33,8 @@ class SixteenNineComponent {
           }),
           m(CouchComponent, { customData: get(vnode, 'attrs.run.customData') }),
           m('.logos', [
-            m('.logo-multi', [
-              m('.logo .wasd-light'),
-              m('.logo .wasd-dark'),
-            ]),
-            m('.logo-multi', [
-              m('.logo .special-effect-white'),
-              m('.logo .special-effect-orange'),
-            ]),
+            m('.logo-multi', [m('.logo .wasd')]),
+            m('.logo-multi', [m('.logo .special-effect')]),
           ]),
         ]),
         m('.bottom',[

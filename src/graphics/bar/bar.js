@@ -64,7 +64,7 @@ export default class BarComponent {
           m('.bar-logo-wasd.summer-day'),
           m('.bar-logo-wasd.summer-night'),
         ]),
-        m('.bar-name-event', 'WASD 2021'),
+        m('.bar-name-event', 'WASD 2022'),
       ]),
       m('.bar-v-space'),
       m('.bar-donos', [

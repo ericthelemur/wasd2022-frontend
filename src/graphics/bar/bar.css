@@ -115,7 +115,7 @@
 }
 
 .bar-logo-special-effect.orange {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/specialeffect-proud-orange.png');
   opacity: var(--day-element-opacity);
 }
 

@@ -61,27 +61,13 @@
   transform: translate(-50%, -50%);
 }
 
-.logo.wasd-light {
-  background-image: url('../assets/wasd-keys-summer-light.svg');
-  opacity: var(--night-element-opacity);
-  width: 270px;
+.logo.wasd {
+  background-image: url('../assets/wasd_standalone.svg');
+  width: 390px;
 }
 
-.logo.wasd-dark {
-  background-image: url('../assets/wasd-keys-summer-dark.svg');
-  opacity: var(--day-element-opacity);
-  width: 270px;
-}
-
-.logo.special-effect-white {
-  background-image: url('../assets/specialeffect-proud-white.png');
-  opacity: var(--night-element-opacity);
-  width: 350px;
-}
-
-.logo.special-effect-orange {
-  background-image: url('../assets/specialeffect-proud-white.png');
-  opacity: var(--day-element-opacity);
+.logo.special-effect {
+  background-image: url('../assets/specialeffect-proud-orange.png');
   width: 350px;
 }
 
