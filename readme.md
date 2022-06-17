@@ -1,4 +1,4 @@
-# wasd2021-summer
+# wasd2022-frontend
 
 ## about
 
@@ -35,13 +35,12 @@ It also uses [nodecg-cli](https://www.npmjs.com/package/nodecg-cli) to setup the
 
 ### break screen
 
-<!--![The WASD2021 NodeCG break screen overlay](./.github/break_screen.png)-->
-TBD
+![image](https://user-images.githubusercontent.com/8903016/174202730-45914da6-f995-42d5-8910-9187a462e7b5.png)
 
 ### game screen
 
-<!--![The WASD2021 NodeCG game screen overlay](./.github/game_screen.png)-->
-TBD
+![image](https://user-images.githubusercontent.com/8903016/174202679-b65ea7f8-7b8a-486d-9afd-d4478907e587.png)
+
 
 ## installation
 
