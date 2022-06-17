@@ -79,51 +79,9 @@ class BreakMultiBox {
       m('.break-multibox-item', [
         m(Incentives, { incentives: vnode.attrs.incentives }),
       ]),
-      m('.break-multibox-item', [
-        m('.break-day-night-container', [
-          m('.break-h-space'),
-          m('.break-right-label', 'Donate to change the WASD stream theme!'),
-          m('.break-h-space'),
-          m('.break-day-night-row', [
-            m('.break-day-night-label', 'Day Mode'),
-            m('.break-day-night-label', 'Night Mode'),
-          ]),
-          m('.break-day-night-row', [
-            m('.break-day-night-multi-image', [
-              m('.break-day-night-image .wasd-day-lightmode'),
-              m('.break-day-night-image .wasd-day-darkmode'),
-            ]),
-            m('.div', 'vs.'),
-            m('.break-day-night-multi-image', [
-              m('.break-day-night-image .wasd-night-lightmode'),
-              m('.break-day-night-image .wasd-night-darkmode'),
-            ]),
-          ]),
-          m('.break-day-night-row', [
-            m('.break-day-night-amount', `£${vnode.attrs.dayAmount}`),
-            m('.break-day-night-amount', `£${vnode.attrs.nightAmount}`),
-          ]),
-          m('.break-day-night-row', [
-            m('.div', this.resultDayNight(vnode.attrs.dayAmount, vnode.attrs.nightAmount)),
-          ]),
-        ]),
-      ]),
     ]);
   }
 
-  resultDayNight(dayAmount, nightAmount) {
-    if (dayAmount === nightAmount) {
-      return 'Draw!';
-    }
-
-    if (dayAmount > nightAmount) {
-      return 'Day Mode is Winning!';
-    }
-
-    if (dayAmount < nightAmount) {
-      return 'Night Mode is Winning!';
-    }
-  }
 
   oncreate(vnode) {
     const boxes = Array.from(vnode.dom.children);
