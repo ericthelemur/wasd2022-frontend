@@ -16,6 +16,9 @@
   --spacer-color: var(--wasd-white-muted);
   --day-element-opacity: 0;
   --night-element-opacity: 1;
+
+  --bar-color: var(--wasd-dark);
+  --bar-text-color: var(--wasd-white);
 }
 
 * {
