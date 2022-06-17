@@ -9,7 +9,7 @@ import './fourThree.css';
 import TimerComponent from '../timer/timer.js';
 import RunnersComponent from '../runners/runners.js';
 import CouchComponent from '../couch/couch.js';
-import BeachBackground from '../beach/beach.js';
+import Background from '../cleanBg/cleanBg.js';
 import BarComponent from '../bar/bar.js';
 
 const replicants = {
@@ -90,7 +90,7 @@ class Logos {
 class FourThreeComponent {
   view(vnode) {
     return m('.graphic .fullscreen', [
-      m(BeachBackground, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
+      m(Background, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
       m('.graphic .overlay', [
         m('.game'),
         m('.left', [

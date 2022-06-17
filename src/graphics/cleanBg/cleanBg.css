@@ -1,0 +1,24 @@
+.beach {
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+}
+
+.beach.night-sky {
+  background-color: #222222;
+}
+
+.beach.night-foreground {
+  background-color: #222222;
+}
+
+.beach.day-sky {
+  background-color: #ffffff;
+  opacity: 0;
+}
+
+.beach.day-foreground {
+  background-color: #ffffff;
+  opacity: 0;
+}
+
