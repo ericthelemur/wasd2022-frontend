@@ -99,7 +99,6 @@ class RaceComponent {
             m(RunGameComponent, { game: get(vnode, 'attrs.run.game') }),
             m(RunDetailsComponent, { run: get(vnode, 'attrs.run') }),
           ]),
-          m('.run-spacer'),
           m('.run-timing', [
             m(TimerComponent, { time: vnode.attrs.time }),
             m('.run-estimate', `Estimate: ${get(vnode, 'attrs.run.estimate')}`),

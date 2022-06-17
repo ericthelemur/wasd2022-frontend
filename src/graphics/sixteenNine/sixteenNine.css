@@ -88,7 +88,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80%;
+  height: 88%;
+  background-repeat: no-repeat;
 }
 
 .run-details {
@@ -96,6 +97,8 @@
   border-left: 2px solid var(--spacer-color);
   border-right: 2px solid var(--spacer-color);
   margin-right: 10px;
+  background-image: url('../assets/game-info-capsule.png');
+  color: white;
 }
 
 .run-game {
@@ -116,7 +119,10 @@
 }
 
 .run-timing {
-  width: 500px;
+  width: 480px;
+  height: 88%;
+  color: white;
+  background-image: url('../assets/timer-capsule.png');
 }
 
 .estimate {
