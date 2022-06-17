@@ -4,7 +4,7 @@
 
 This is a [NodeCG](https://nodecg.dev) bundle used for broadcast graphics for
 the videogame speedrunning marathon event [Warwick's Awesome Speedruns & Demos
-2021 Summer](https://warwickspeed.run).
+2022](https://warwickspeed.run).
 
 It also uses [nodecg-cli](https://www.npmjs.com/package/nodecg-cli) to setup the bundles.
 

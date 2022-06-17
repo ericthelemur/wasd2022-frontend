@@ -16,6 +16,14 @@
   --spacer-color: var(--wasd-white-muted);
   --day-element-opacity: 0;
   --night-element-opacity: 1;
+
+  --bar-color: var(--wasd-dark);
+  --bar-text-color: var(--wasd-white);
+
+  --wasd-yellow: #ffaf00;
+  --wasd-orange: #ff7400;
+  --wasd-red: #ff3000;
+
 }
 
 * {
@@ -36,7 +44,6 @@ body {
 
   color: var(--text-color);
   font-family: 'Montserrat';
-  text-shadow: -3px 3px 0 #ff3000a0;
 }
 
 .graphic {

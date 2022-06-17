@@ -27,12 +27,12 @@
 }
 
 .video-logo.special-effect-orange {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/specialeffect-proud-orange.png');
   opacity: var(--day-element-opacity);
 }
 
 .video-logo.special-effect-white {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/special-effect-white.png');
   opacity: var(--night-element-opacity);
 }
 
@@ -62,6 +62,8 @@
 
   border: 1px solid var(--spacer-color);
   border-radius: 10px;
+
+  background-color: var(--text-color-invert);
 }
 
 .video-up-next-details {

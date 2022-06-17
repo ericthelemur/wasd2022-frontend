@@ -5,20 +5,20 @@
 }
 
 .beach.night-sky {
-  background-image: url('../assets/wasd-beach-night-sky-1080.png');
+  background-image: url('../assets/simple-background-dark.png');
 }
 
 .beach.night-foreground {
-  background-image: url('../assets/wasd-beach-night-front-1080.png');
+  background-image: url('../assets/simple-background-dark.png');
 }
 
 .beach.day-sky {
-  background-image: url('../assets/wasd-beach-day-sky-1080.png');
+  background-image: url('../assets/simple-background-light.png');
   opacity: 0;
 }
 
 .beach.day-foreground {
-  background-image: url('../assets/wasd-beach-day-front-1080.png');
+  background-image: url('../assets/simple-background-light.png');
   opacity: 0;
 }
 

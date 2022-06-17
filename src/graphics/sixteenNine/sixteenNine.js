@@ -7,7 +7,7 @@ import './sixteenNine.css';
 import TimerComponent from '../timer/timer.js';
 import RunnersComponent from '../runners/runners.js';
 import CouchComponent from '../couch/couch.js';
-import BeachBackground from '../beach/beach.js';
+import Background from '../cleanBg/cleanBg.js';
 import BarComponent from '../bar/bar.js';
 
 const replicants = {
@@ -22,7 +22,7 @@ const sep = '/';
 class SixteenNineComponent {
   view(vnode) {
     return m('.graphic .fullscreen', [
-      m(BeachBackground, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
+      m(Background, { backgroundModeRep: vnode.attrs.backgroundModeRep }),
       m('.graphic .overlay', [
         m('.game'),
         m('.left', [
@@ -33,11 +33,8 @@ class SixteenNineComponent {
           }),
           m(CouchComponent, { customData: get(vnode, 'attrs.run.customData') }),
           m('.logos', [
-            m('.logo-multi', [
-              m('.logo .wasd-light'),
-              m('.logo .wasd-dark'),
-            ]),
-            m('.logo-multi', [
+            m('.logo-multi', [m('.logo .wasd')]),
+            m('.logo-multi .special-effect', [
               m('.logo .special-effect-white'),
               m('.logo .special-effect-orange'),
             ]),

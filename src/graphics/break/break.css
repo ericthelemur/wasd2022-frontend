@@ -61,22 +61,22 @@
 }
 
 .break-logo.wasd-light {
-  background-image: url('../assets/wasd-keys-summer-light.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--night-element-opacity);
 }
 
 .break-logo.wasd-dark {
-  background-image: url('../assets/wasd-keys-summer-dark.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--day-element-opacity);
 }
 
 .break-logo.special-effect-white {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/special-effect-white.png');
   opacity: var(--night-element-opacity);
 }
 
 .break-logo.special-effect-orange {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/specialeffect-proud-orange.png');
   opacity: var(--day-element-opacity);
 }
 
@@ -88,6 +88,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 275px;
 }
 
 .countdown-label {
@@ -110,7 +111,7 @@
 }
 
 .break-right-label {
-  font-size: 30px;
+  font-size: 60px;
   width: 100%;
   text-align: center;
   margin: 20px 0;
@@ -319,23 +320,23 @@
   transform: translate(-50%, -50%);
 }
 
-.break-day-night-image.wasd-day-lightmode {
-  background-image: url('../assets/wasd-w-day-lightmode.png');
+.break-day-night-image.wasd-day {
+  background-image: url('../assets/wasd-w-day.png');
   opacity: var(--night-element-opacity);
 }
 
-.break-day-night-image.wasd-day-darkmode {
-  background-image: url('../assets/wasd-w-day-darkmode.png');
+.break-day-night-image.wasd-day {
+  background-image: url('../assets/wasd-w-day.png');
   opacity: var(--day-element-opacity);
 }
 
-.break-day-night-image.wasd-night-lightmode {
-  background-image: url('../assets/wasd-w-night-lightmode.png');
+.break-day-night-image.wasd-night {
+  background-image: url('../assets/wasd-w-night.png');
   opacity: var(--night-element-opacity);
 }
 
-.break-day-night-image.wasd-night-darkmode {
-  background-image: url('../assets/wasd-w-night-darkmode.png');
+.break-day-night-image.wasd-night {
+  background-image: url('../assets/wasd-w-night.png');
   opacity: var(--day-element-opacity);
 }
 

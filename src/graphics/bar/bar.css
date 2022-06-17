@@ -18,6 +18,9 @@
 
   padding-right: 15px;
   padding-left: 5px;
+
+  background-color: var(--bar-color);
+  color: var(--bar-text-color);
 }
 
 .bar > * {
@@ -55,13 +58,11 @@
 }
 
 .bar-logo-wasd.summer-day {
-  background-image: url('../assets/wasd-w-day-lightmode.png');
-  opacity: var(--night-element-opacity);
+  background-image: url('../assets/wasd-w-day.png');
 }
 
 .bar-logo-wasd.summer-night {
-  background-image: url('../assets/wasd-w-night-darkmode.png');
-  opacity: var(--day-element-opacity);
+  background-color: url('../assets/wasd-w-night.png');
 }
 
 .bar-v-space {
@@ -110,12 +111,12 @@
 }
 
 .bar-logo-special-effect.white {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/special-effect-white.png');
   opacity: var(--night-element-opacity);
 }
 
 .bar-logo-special-effect.orange {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/special-effect-white.png');
   opacity: var(--day-element-opacity);
 }
 

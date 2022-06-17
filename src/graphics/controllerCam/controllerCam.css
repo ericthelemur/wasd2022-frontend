@@ -62,25 +62,25 @@
 }
 
 .logo.wasd-light {
-  background-image: url('../assets/wasd-keys-summer-light.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--night-element-opacity);
   width: 270px;
 }
 
 .logo.wasd-dark {
-  background-image: url('../assets/wasd-keys-summer-dark.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--day-element-opacity);
   width: 270px;
 }
 
 .logo.special-effect-white {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/special-effect-white.png');
   opacity: var(--night-element-opacity);
   width: 350px;
 }
 
 .logo.special-effect-orange {
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/specialeffect-proud-orange.png');
   opacity: var(--day-element-opacity);
   width: 350px;
 }
@@ -102,14 +102,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80%;
+  height: 88%;
+  background-repeat: no-repeat;
 }
 
 .run-details {
   flex-grow: 1; /* grow to available size in parent */
-  border-left: 2px solid var(--spacer-color);
-  border-right: 2px solid var(--spacer-color);
   margin-right: 10px;
+  background-image: url('../assets/game-info-capsule.png');
+  color: white;
 }
 
 .run-game {
@@ -130,7 +131,10 @@
 }
 
 .run-timing {
-  width: 500px;
+  width: 480px;
+  height: 88%;
+  color: white;
+  background-image: url('../assets/timer-capsule.png');
 }
 
 .estimate {
