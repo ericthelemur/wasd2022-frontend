@@ -61,12 +61,12 @@
 }
 
 .break-logo.wasd-light {
-  background-image: url('../assets/wasd-keys-summer-light.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--night-element-opacity);
 }
 
 .break-logo.wasd-dark {
-  background-image: url('../assets/wasd-keys-summer-dark.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--day-element-opacity);
 }
 
@@ -319,23 +319,23 @@
   transform: translate(-50%, -50%);
 }
 
-.break-day-night-image.wasd-day-lightmode {
-  background-image: url('../assets/wasd-w-day-lightmode.png');
+.break-day-night-image.wasd-day {
+  background-image: url('../assets/wasd-w-day.png');
   opacity: var(--night-element-opacity);
 }
 
-.break-day-night-image.wasd-day-darkmode {
-  background-image: url('../assets/wasd-w-day-darkmode.png');
+.break-day-night-image.wasd-day {
+  background-image: url('../assets/wasd-w-day.png');
   opacity: var(--day-element-opacity);
 }
 
-.break-day-night-image.wasd-night-lightmode {
-  background-image: url('../assets/wasd-w-night-lightmode.png');
+.break-day-night-image.wasd-night {
+  background-image: url('../assets/wasd-w-night.png');
   opacity: var(--night-element-opacity);
 }
 
-.break-day-night-image.wasd-night-darkmode {
-  background-image: url('../assets/wasd-w-night-darkmode.png');
+.break-day-night-image.wasd-night {
+  background-image: url('../assets/wasd-w-night.png');
   opacity: var(--day-element-opacity);
 }
 

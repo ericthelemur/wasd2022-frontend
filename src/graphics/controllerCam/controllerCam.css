@@ -62,13 +62,13 @@
 }
 
 .logo.wasd-light {
-  background-image: url('../assets/wasd-keys-summer-light.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--night-element-opacity);
   width: 270px;
 }
 
 .logo.wasd-dark {
-  background-image: url('../assets/wasd-keys-summer-dark.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--day-element-opacity);
   width: 270px;
 }

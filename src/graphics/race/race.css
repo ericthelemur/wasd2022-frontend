@@ -124,13 +124,13 @@
 
 .logo.wasd-light {
   height: 80%;
-  background-image: url('../assets/wasd-keys-summer-light.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--night-element-opacity);
 }
 
 .logo.wasd-dark {
   height: 80%;
-  background-image: url('../assets/wasd-keys-summer-dark.svg');
+  background-image: url('../assets/wasd_standalone.svg');
   opacity: var(--day-element-opacity);
 }
 
