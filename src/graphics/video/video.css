@@ -62,6 +62,8 @@
 
   border: 1px solid var(--spacer-color);
   border-radius: 10px;
+
+  background-color: var(--text-color-invert);
 }
 
 .video-up-next-details {
