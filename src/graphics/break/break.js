@@ -51,7 +51,6 @@ class Incentives {
     return m('.break-incentives-container', [
       m('.break-h-space'),
       m('.break-right-label', 'Donation Incentives'),
-      m('.break-h-space'),
       m('.break-incentives-list', ...vnode.attrs.incentives.filter(i => i.active)
                                                            .sort((left, right) => left.endsAt < right.endsAt) // tmp
                                                            .map((i) => {
@@ -68,7 +67,6 @@ class BreakMultiBox {
         m('.break-later-on', [
           m('.break-h-space'),
           m('.break-right-label', 'Later On'),
-          m('.break-h-space'),
           (
             (vnode.attrs.nextRuns.length < 2)
             ? m('.break-next-run-game', 'NO RUNS!')
@@ -143,7 +141,6 @@ class BreakComponent {
               m('.break-logo .special-effect-white'),
               m('.break-logo .special-effect-orange'),
             ]),
-            m('.break-h-space'),
             m('.countdown-container', [
               m('.countdown-label', 'BACK SOON'),
               m('.countdown-time', vnode.attrs.countdown.display),
@@ -151,9 +148,7 @@ class BreakComponent {
           ]),
           m('.break-v-space'),
           m('.break-right', [
-            m('.break-h-space'),
             m('.break-right-label', 'Coming Up Next'),
-            m('.break-h-space'),
             ((vnode.attrs.nextRuns.length === 0)
               ? m('.break-next-run-game', 'NO RUNS!')
               : m(Run, { run: vnode.attrs.nextRuns[0] })),

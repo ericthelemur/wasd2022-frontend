@@ -19,6 +19,11 @@
 
   --bar-color: var(--wasd-dark);
   --bar-text-color: var(--wasd-white);
+
+  --wasd-yellow: #ffaf00;
+  --wasd-orange: #ff7400;
+  --wasd-red: #ff3000;
+
 }
 
 * {

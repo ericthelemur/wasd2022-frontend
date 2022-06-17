@@ -108,8 +108,6 @@
 
 .run-details {
   flex-grow: 1; /* grow to available size in parent */
-  border-left: 2px solid var(--spacer-color);
-  border-right: 2px solid var(--spacer-color);
   margin-right: 10px;
   background-image: url('../assets/game-info-capsule.png');
   color: white;
