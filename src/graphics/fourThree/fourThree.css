@@ -130,14 +130,14 @@
 .logo.special-effect-white {
   height: 100%;
   width: 90%;
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/special-effect-white.png');
   opacity: var(--night-element-opacity);
 }
 
 .logo.special-effect-orange {
   height: 100%;
   width: 90%;
-  background-image: url('../assets/specialeffect-proud-white.png');
+  background-image: url('../assets/specialeffect-proud-orange.png');
   opacity: var(--day-element-opacity);
 }
 

@@ -66,8 +66,13 @@
   width: 390px;
 }
 
-.logo.special-effect {
+.logo.special-effect-orange {
   background-image: url('../assets/specialeffect-proud-orange.png');
+  width: 350px;
+}
+
+.logo.special-effect-white {
+  background-image: url('../assets/special-effect-white.png');
   width: 350px;
 }
 
