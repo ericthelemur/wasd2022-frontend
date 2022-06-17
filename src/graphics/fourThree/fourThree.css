@@ -126,7 +126,7 @@
 .logo.special-effect-orange {
   height: 100%;
   width: 90%;
-  background-image: url('../assets/specialeffect-proud-orange.png');
+  background-image: url('../assets/specialeffect-proud-white.png');
   opacity: var(--day-element-opacity);
 }
 

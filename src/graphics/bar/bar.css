@@ -31,7 +31,7 @@
   top: 0;
   left: 0;
   opacity: var(--day-element-opacity);
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--text-colour-invert);
   z-index: 0;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .bar-logo-special-effect.orange {
-  background-image: url('../assets/specialeffect-proud-orange.png');
+  background-image: url('../assets/specialeffect-proud-white.png');
   opacity: var(--day-element-opacity);
 }
 
