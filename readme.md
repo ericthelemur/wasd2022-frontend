@@ -48,6 +48,8 @@ TBD
 ### clone and install NodeCG and bundles
 
 ```shell
+npm install nodecg-cli -g
+
 # Create repo
 nodecg setup
 
